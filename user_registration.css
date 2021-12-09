@@ -1,0 +1,47 @@
+.header{
+	width:420px;
+    background-color:gray;
+    /*padding:2px 0px 2px 4px;*/
+    padding: auto;
+    text-align: center;
+	border-radius:5px;
+	border:solid #000;
+    height: 70px;
+}
+
+form {
+    padding: 20px;
+
+}
+
+input[type=text]{
+	width:320px;
+}
+
+/* ================= */
+.content{
+	width:320px;
+	height:220px;
+}
+/* ================= */
+
+label{
+	width:120px;
+   
+}
+
+.registration{
+	height: 60px;
+}
+
+
+/* ================= */
+input[type=submit]{
+	/*margin-left:320px;*/
+    background-color:#525252;
+	color:#FFF;
+	font-weight:bold;
+	display:block;
+	padding:3px 40px;
+}
+/* ================= */
