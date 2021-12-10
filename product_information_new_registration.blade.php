@@ -24,7 +24,7 @@
   </div>
          
   <div class="content">
-    <div class="product_new_registration">
+    <div class="product_information_new_registration">
         <div class="product_name">
             <label>商品名:
                 <input type="text" name="product_name">
@@ -71,11 +71,11 @@
 
   <div class="footer">
        <div class="registration">
-      <input type="submit" value="登録" action="http://localhost/user_login.blade.php">
+      <input type="submit" value="登録" action="http://localhost/product_information_new_registration">
     </div>
     
     <div class="return">
-      <input type="submit" value="戻る" action="http://localhost/user_login.blade.php">
+      <input type="submit" value="戻る" action="http://localhost/product_information_new_registration">
     </div>
   </div>
 </form>

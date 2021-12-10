@@ -35,6 +35,19 @@
                     <!-- <form action="*****" method="GET">
                     <input class="form-text" type="seach" placeholder="検索"> -->
 
+
+
+
+
+                    <!-- 頭文字3桁での検索可能(部分一致) -->
+                    <!-- companiesテーブルに登録されている企業から選択できるようにする -->
+                    <!-- リダイレクトの記述(結果表示) -->
+
+
+
+
+
+
                 </label>
             </div>
         </div>
@@ -94,6 +107,13 @@
             <input type="submit" formaction="(******)" name="new_registration" value="削除">
         </div>
         
+
+
+        <!-- 削除処理実行前にダイアログにて確認を行う -->
+
+
+
+
     </div>
     
     
