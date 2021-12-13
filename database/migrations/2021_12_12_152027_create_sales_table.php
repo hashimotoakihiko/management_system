@@ -15,7 +15,8 @@ class CreateSalesTable extends Migration
     {
         if (!Schema::hasTable('sales')) {
             Schema::create('sales', function (Blueprint $table) {
-                $table->id();
+                // $table->id();
+                $table->primary(['id']);
                 $table->timestamps();
                 $table->product_id();
                 $table->created_at();
