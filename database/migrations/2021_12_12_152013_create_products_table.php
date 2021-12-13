@@ -18,11 +18,11 @@ class CreateProductsTable extends Migration
                 // $table->id();
                 $table->primary(['id']);
                 $table->timestamps();
-                $table->company_id();
-                $table->product_name();
-                $table->price();
-                $table->stock();
-                $table->comment();
+                $table->integer('company_id');
+                $table->string('product_name',100);
+                $table->integer('price');
+                $table->integer('stock');
+                $table->text('comment');
                 $table->created_at();
                 $table->updated_at();
             });

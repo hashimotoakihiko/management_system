@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
                 // $table->id();
                 $table->primary(['id']);
                 $table->timestamps();
-                $table->email();
-                $table->password();
+                $table->text('email');
+                $table->string('password',100);
                 $table->created_at();
                 $table->updated_at();
             });
