@@ -15,7 +15,8 @@ class CreateCompaniesTable extends Migration
     {
         if (!Schema::hasTable('companies')) {
             Schema::create('companies', function (Blueprint $table) {
-                $table->id();
+                // $table->id();
+                $table->primary(['id']);
                 $table->timestamps();
                 $table->company_name();
                 $table->street_address();
