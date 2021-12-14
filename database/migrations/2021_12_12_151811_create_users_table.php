@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
                 $table->timestamps();
                 $table->text('email');
                 $table->string('password',100);
-                $table->created_at();
-                $table->updated_at();
+                $table->timestamps('created_at');
+                $table->timestamps('updated_at');
             });
         }
     }

@@ -23,8 +23,8 @@ class CreateProductsTable extends Migration
                 $table->integer('price');
                 $table->integer('stock');
                 $table->text('comment');
-                $table->created_at();
-                $table->updated_at();
+                $table->timestamps('created_at');
+                $table->timestamps('updated_at');
             });
         }
     }

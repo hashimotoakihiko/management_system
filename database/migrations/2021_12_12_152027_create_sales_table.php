@@ -19,8 +19,8 @@ class CreateSalesTable extends Migration
                 $table->primary(['id']);
                 $table->timestamps();
                 $table->integer('product_id');
-                $table->created_at();
-                $table->updated_at();
+                $table->timestamps('created_at');
+                $table->timestamps('updated_at');
             });
         }
     }

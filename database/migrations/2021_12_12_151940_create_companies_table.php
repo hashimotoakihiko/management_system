@@ -20,8 +20,8 @@ class CreateCompaniesTable extends Migration
                 $table->timestamps();
                 $table->string('company_name',100);
                 $table->text('street_address');
-                $table->created_at();
-                $table->updated_at();
+                $table->timestamps('created_at');
+                $table->timestamps('updated_at');
             });
         }
     }
