@@ -2,10 +2,10 @@
 <html>
 <html lang="ja"> </html>
 <head>
-<link rel="stylesheet" href="user_product_list.css">
-<style>
+<link rel="stylesheet" href="product_information_edit.css">
+<!-- <style>
 
-</style>
+</style> -->
 <meta charset="UTF-8">
 <title>会員登録</title>
 </head>
@@ -14,7 +14,7 @@
 
 
 <div class="header">
-    <h1>商品情報詳細画面</h1>
+    <h1>商品情報編集画面</h1>
 </div>
 
 <form name="add_form" action="http://localhost/user_login.blade.php" method="post">
@@ -62,17 +62,15 @@
         </div>
     </div>
   
-</form>
-  
-    </div>
+  </div>
     
     <div class="footer">
-        <div class="product_information_details">
-            <input type="submit" value="編集" action="http://localhost/product_information_edit">
+        <div class="product_information_edit">
+            <input type="submit" value="更新" action="http://localhost/product_information_details.blade.php">
         </div>
     
         <div class="return">
-            <input type="submit" value="戻る" action="http://localhost/product_information_list">
+            <input type="submit" value="戻る" action="http://localhost/product_information_details.blade.php">
         </div>
     </div>
 </form>

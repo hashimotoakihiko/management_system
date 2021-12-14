@@ -53,7 +53,10 @@
         </div>
         
         <div class="new_registration">
-            <input type="submit" formaction="(******)" name="new_registration" value="新規登録">
+            <input type="submit" 
+                   formaction="product_information_new_registration" 
+                   name="new_registration" 
+                   value="新規登録">
         </div>
     </div>
 
@@ -100,11 +103,17 @@
             </div>
     
         <div class="product _details">
-            <input type="submit" formaction="(******)" name="product _nformation_details" value="詳細表示">
+            <input type="submit" 
+                   formaction="(product_information_details.php)" 
+                   name="product_information_details" 
+                   value="詳細表示">
         </div>
         
         <div class="product_deletion">
-            <input type="submit" formaction="(******)" name="new_registration" value="削除">
+            <input type="submit"
+                   formaction="(******)" 
+                   name="product_deletion"
+                   value="削除">
         </div>
         
 
