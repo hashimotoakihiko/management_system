@@ -15,13 +15,10 @@ class CreateUsersTable extends Migration
     {
         if (!Schema::hasTable('users')) {
             Schema::create('users', function (Blueprint $table) {
-                // $table->id();
-                $table->primary(['id']);
+                $table->bigIncrements('id');
                 $table->timestamps();
                 $table->text('email');
                 $table->string('password',100);
-                $table->timestamps('created_at');
-                $table->timestamps('updated_at');
             });
         }
     }

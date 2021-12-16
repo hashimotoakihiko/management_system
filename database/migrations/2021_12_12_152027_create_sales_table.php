@@ -15,12 +15,9 @@ class CreateSalesTable extends Migration
     {
         if (!Schema::hasTable('sales')) {
             Schema::create('sales', function (Blueprint $table) {
-                // $table->id();
-                $table->primary(['id']);
+                $table->bigIncrements('id');
                 $table->timestamps();
                 $table->integer('product_id');
-                $table->timestamps('created_at');
-                $table->timestamps('updated_at');
             });
         }
     }

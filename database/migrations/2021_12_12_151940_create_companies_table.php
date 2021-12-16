@@ -15,13 +15,10 @@ class CreateCompaniesTable extends Migration
     {
         if (!Schema::hasTable('companies')) {
             Schema::create('companies', function (Blueprint $table) {
-                // $table->id();
-                $table->primary(['id']);
+                $table->bigIncrements('id');
                 $table->timestamps();
                 $table->string('company_name',100);
                 $table->text('street_address');
-                $table->timestamps('created_at');
-                $table->timestamps('updated_at');
             });
         }
     }
