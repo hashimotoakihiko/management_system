@@ -13,17 +13,49 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('users')) {
+        // if (!Schema::hasTable('management_system')) {
+
             Schema::create('users', function (Blueprint $table) {
-                // $table->id();
-                $table->primary(['id']);
+                $table->bigIncrements('id');
                 $table->timestamps();
                 $table->text('email');
                 $table->string('password',100);
-                $table->timestamps('created_at');
-                $table->timestamps('updated_at');
+                $table->created_at();
+                $table->updated_at();
             });
-        }
+
+            Schema::create('companies', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->timestamps();
+                $table->string('company_name',100);
+                $table->text('street_address');
+                $table->created_at();
+                $table->updated_at();
+            });
+
+            Schema::create('products', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->timestamps();
+                $table->integer('company_id');
+                $table->string('product_name',100);
+                $table->integer('price');
+                $table->integer('stock');
+                $table->text('comment');
+                $table->created_at();
+                $table->updated_at();
+            });
+            
+            Schema::create('sales', function (Blueprint $table) {
+                // $table->id();
+                $table->bigIncrements('id');
+                $table->timestamps();
+                $table->integer('product_id');
+                $table->created_at();
+                $table->updated_at();
+            });
+        // }
+
+
     }
 
     /**
