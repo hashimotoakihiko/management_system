@@ -21,6 +21,35 @@ class CreateUsersTable extends Migration
                 $table->string('password',100);
             });
         }
+
+        if (!Schema::hasTable('companies')) {
+            Schema::create('companies', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->timestamps();
+                $table->string('company_name',100);
+                $table->text('street_address');
+            });
+        }
+
+        if (!Schema::hasTable('products')) {
+            Schema::create('products', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->timestamps();
+                $table->integer('company_id');
+                $table->string('product_name',100);
+                $table->integer('price');
+                $table->integer('stock');
+                $table->text('comment');
+            });
+        }
+
+        if (!Schema::hasTable('sales')) {
+            Schema::create('sales', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->timestamps();
+                $table->integer('product_id');
+            });
+        }
     }
 
     /**
