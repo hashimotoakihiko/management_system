@@ -31,9 +31,9 @@
             <div class="maker_name">
                 <label>メーカー名:
                     <input type="text" name="maker_name" placeholder="メーカー名を入力">
-                    <input type="submit" value="検索">
-                    <!-- <form action="*****" method="GET">
-                    <input class="form-text" type="seach" placeholder="検索"> -->
+                    <!-- <input type="submit" value="検索"> -->
+                    <input type="search" name="検索" placeholder="キーワードを入力">
+            
 
 
 
@@ -53,10 +53,7 @@
         </div>
         
         <div class="new_registration">
-            <input type="submit" 
-                   formaction="product_information_new_registration" 
-                   name="new_registration" 
-                   value="新規登録">
+            <input type="submit"  formaction="product_information_new_registration"  name="new_registration"  value="新規登録">
         </div>
     </div>
 
