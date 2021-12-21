@@ -1,13 +1,22 @@
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
 
 .header{
-	width:300px;
+	width:420px;
     background-color:gray;
-    /*padding:2px 0px 2px 4px;*/
     padding: auto;
     text-align: center;
 	border-radius:5px;
 	border:solid #000;
-    height: 70px;
+    height: 150px;
+    margin: auto;
+    font-family:fantasy;
+    font-size: 25px;
 }
 
 form {
@@ -18,12 +27,11 @@ input[type=text]{
 	width:200px;
 }
 
-/* ================= */
 .content{
 	width:320px;
 	height:220px;
+	margin: auto;
 }
-/* ================= */
 
 label{
 	width:90px;
@@ -31,16 +39,16 @@ label{
 	margin: auto;
 }
 
-product_search{
+.product_search{
     width: 320px;
 }
 
-.registration{
+.new_registration{
 	height: 60px;
+	padding-top: 30px;
+	
 }
 
-
-/* ================= */
 input[type=submit]{
 	/*margin-left:320px;*/
     background-color:#525252;
@@ -49,8 +57,16 @@ input[type=submit]{
 	display:block;
 	padding:3px 20px;
 	display:inline-block;
+	
 }
-/* ================= */
+
+.product_name{
+	margin: auto;
+}
+
+.company_name{
+	margin: auto;
+}
 
 .product_information_list{
     width: 400px;
@@ -58,6 +74,7 @@ input[type=submit]{
     line-height:2;
     height: 350px;
     text-align:center;
+    margin: auto;
 }
 
 .product_information_image{
