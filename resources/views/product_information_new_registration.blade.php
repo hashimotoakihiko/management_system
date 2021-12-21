@@ -51,9 +51,9 @@
             </label><br>
         </div>
         
-        <div class="maker_name">
+        <div class="company_name">
             <label>メーカー名:
-                <select name="maker_name">
+                <select name="company_name">
                     <option value="1">サントリー  </option>
                     <option value="2">コカ・コーラ</option>
                     <option value="3">伊藤園      </option>

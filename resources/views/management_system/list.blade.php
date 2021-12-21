@@ -14,7 +14,7 @@
 
 
 <div class="header">
-	<h1>商品情報一覧</h1>
+	<h1>vending machine</h1>
 </div>
 
 <form name="add_form" action="http://localhost/user_login.blade.php" method="post">
@@ -23,29 +23,27 @@
         <div class="product_search">
             <div class="product_name">
                 <label>商品名:
-                    <input type="text" name="product_name" placeholder="商品名を入力">
-                    <input type="submit" value="検索">
+                    <form action="{{ route('products.list') }}" method="GET">
+                        <input type="text" name="product_name" placeholder="商品名を入力" value="{{ $product_name }}">
+                        <input type="submit" value="検索">
+                    </form>
                 </label>
             </div>
             
-            <div class="maker_name">
+            <div class="company_name">
                 <label>メーカー名:
-                    <input type="text" name="maker_name" placeholder="メーカー名を入力">
-                    <!-- <input type="submit" value="検索"> -->
-                    <input type="search" name="検索" placeholder="キーワードを入力">
+                    <form action="{{ route('companies.list') }}" method="GET">
+                        <input type="text" name="company_name" placeholder="メーカー名を入力" value="{{ $company_name }}">
+                        <input type="submit" value="検索">
+                    </form>
+                    
+                    <!--<input type="text" name="company_name" placeholder="メーカー名を入力">-->
+                    <!--<input type="submit" value="検索">-->
             
-
-
-
-
 
                     <!-- 頭文字3桁での検索可能(部分一致) -->
                     <!-- companiesテーブルに登録されている企業から選択できるようにする -->
                     <!-- リダイレクトの記述(結果表示) -->
-
-
-
-
 
 
                 </label>
@@ -84,9 +82,9 @@
                 </label><br>
             </div>
             
-            <div class="maker_name">
+            <div class="company_name">
                 <label>メーカー名:
-                    <select name="maker_name">
+                    <select name="company_name">
                         <option value="1">サントリー  </option>
                         <option value="2">コカ・コーラ</option>
                         <option value="3">伊藤園      </option>
