@@ -22,7 +22,7 @@ class Management_system extends Model
     ];
     
     //テーブル名
-    protected $table = 'companies';
+    protected $table ='companies';
 
     //可変項目
     protected $fillable = 
@@ -32,28 +32,28 @@ class Management_system extends Model
         ['street_address']
     ];
 
-    //テーブル名
-    protected $table ='products';
+    // //テーブル名
+    // protected $table ='products';
 
-    //可変項目
-    protected $fillable = 
-    [
-        ['id'],
-        ['company_id'],
-        ['product_name',100],
-        ['price'],
-        ['stock'],
-        ['comment']
-    ];
+    // //可変項目
+    // protected $fillable = 
+    // [
+    //     ['id'],
+    //     ['company_id'],
+    //     ['product_name',100],
+    //     ['price'],
+    //     ['stock'],
+    //     ['comment']
+    // ];
 
-    //テーブル名
-    protected $table ='sales';
+    // //テーブル名
+    // protected $table ='sales';
 
-    //可変項目
-    protected $fillable = 
-    [
-        ['id'],
-        ['product_id']
-    ];
+    // //可変項目
+    // protected $fillable = 
+    // [
+    //     ['id'],
+    //     ['product_id']
+    // ];
 
 }

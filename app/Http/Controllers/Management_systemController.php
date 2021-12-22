@@ -12,8 +12,8 @@ class Management_systemController extends Controller
      * @return view
      */
 
-    public function showList()
+    public function ()
     {
-        return view('management_system.list');
+        return view('management_system.product_information_list');
     }
 }

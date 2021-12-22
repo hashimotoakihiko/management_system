@@ -18,28 +18,28 @@ use Illuminate\Support\Facades\Route;
 // });
 
 //商品一覧画面を表示
-Route::get('/','App\Http\Controllers\Management_systemController@showList')->name
+Route::get('/','App\Http\Controllers\Management_systemController@product_information_list')->name
 ('users');
 
-/*
-//商品登録画面を表示
-Route::get('/blog/create','App\Http\Controllers\BlogController@showCreate')->name
-('create');
 
-//商品登録
-Route::post('/blog/store','App\Http\Controllers\BlogController@exeStore')->name
-('store');
+// //商品登録画面を表示
+// Route::get('/management_system/create','App\Http\Controllers\Management_systemController@showCreate')->name
+// ('create');
 
-//商品詳細画面を表示
-Route::get('/blog/{id}','App\Http\Controllers\BlogController@showDetail')->name
-('show');
+// //商品登録
+// Route::post('/management_system/store','App\Http\Controllers\Management_systemController@exeStore')->name
+// ('store');
 
-//商品編集画面を表示
-Route::get('/blog/edit/{id}','App\Http\Controllers\BlogController@showEdit')->name
-('edit');
-Route::post('/blog/update','App\Http\Controllers\BlogController@exeUpdate')->name
-('update');
-*/
+// //商品詳細画面を表示
+// Route::get('/management_system/{id}','App\Http\Controllers\Management_systemController@showDetail')->name
+// ('show');
+
+// //商品編集画面を表示
+// Route::get('/management_system/edit/{id}','App\Http\Controllers\Management_systemController@showEdit')->name
+// ('edit');
+// Route::post('/management_system/update','App\Http\Controllers\Management_systemController@exeUpdate')->name
+// ('update');
+
 
 
 
