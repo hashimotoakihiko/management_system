@@ -105,25 +105,26 @@ input[type=submit]{
 
     <div class="content">
         <h2>商品情報一覧</h2>
+
         <div class="product_search">
-            <div class="product_name">
+            <!-- <div class="product_name">
                 <label>商品名:
-                    <form action="{{ route('products.list') }}" method="GET">
+                    <form action="{{ route('users') }}" method="GET">
                         <input type="text" name="product_name" placeholder="商品名を入力" value="{{ $product_name }}">
                         <input type="submit" value="検索">
                     </form>
                 </label>
-            </div>
+            </div> -->
             
-            <div class="company_name">
+            <!-- <div class="company_name">
                 <label>メーカー名:
-                    <form action="{{ route('companies.list') }}" method="GET">
+                    <form action="{{ route('companies') }}" method="GET">
                         <input type="text" name="company_name" placeholder="メーカー名を入力" value="{{ $company_name }}">
                         <input type="submit" value="検索">
-                    </form>
+                    </form> -->
                     
-                    <!--<input type="text" name="company_name" placeholder="メーカー名を入力">-->
-                    <!--<input type="submit" value="検索">-->
+                    <input type="text" name="company_name" placeholder="メーカー名を入力">
+                    <input type="submit" value="検索">
             
 
                     <!-- 頭文字3桁での検索可能(部分一致) -->
@@ -131,8 +132,8 @@ input[type=submit]{
                     <!-- リダイレクトの記述(結果表示) -->
 
 
-                </label>
-            </div>
+                <!-- </label>
+            </div>  -->
         </div>
         
         <div class="new_registration">

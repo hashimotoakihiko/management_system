@@ -10,6 +10,8 @@ class Management_system extends Model
     // use HasFactory;
     //※Model作成時に自動生成。
 
+    protected $table ='users';
+
     //テーブル名
     protected $table ='users';
 
