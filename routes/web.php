@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 //商品一覧画面を表示
-Route::get('/','App\Http\Controllers\Management_systemController@product_information_list')->name
+Route::get('/','App\Http\Controllers\Management_systemController@showList')->name
 ('users');
 
 
