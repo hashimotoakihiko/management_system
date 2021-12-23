@@ -5,13 +5,97 @@
 <link rel="stylesheet" href="product_information_list.css">
 <!-- <style>
 
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+.header{
+	width:420px;
+    background-color:gray;
+    padding: auto;
+    text-align: center;
+	border-radius:5px;
+	border:solid #000;
+    height: 150px;
+    margin: auto;
+    font-family:fantasy;
+    font-size: 25px;
+}
+
+form {
+    padding: 20px;
+}
+
+input[type=text]{
+	width:200px;
+}
+
+.content{
+	width:320px;
+	height:220px;
+	margin: auto;
+}
+
+label{
+	width:90px;
+	background-color: green;
+	margin: auto;
+}
+
+.product_search{
+    width: 320px;
+}
+
+.new_registration{
+	height: 60px;
+	padding-top: 30px;
+	
+}
+
+input[type=submit]{
+    background-color:#525252;
+	color:#FFF;
+	font-weight:bold;
+	display:block;
+	padding:3px 20px;
+	display:inline-block;
+	
+}
+
+.product_name{
+	margin: auto;
+}
+
+.company_name{
+	margin: auto;
+}
+
+.product_information_list{
+    width: 400px;
+    text-align: center;
+    line-height:2;
+    height: 350px;
+    text-align:center;
+    margin: auto;
+}
+
+.product_information_image{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height:2;
+    margin: auto;
+}
+
 </style> -->
 <meta charset="UTF-8">
 <title>会員登録</title>
 </head>
 <body>
-
-
 
 <div class="header">
 	<h1>vending machine</h1>
@@ -20,6 +104,7 @@
 <form name="add_form" action="http://localhost/user_login.blade.php" method="post">
 
     <div class="content">
+        <h2>商品情報一覧</h2>
         <div class="product_search">
             <div class="product_name">
                 <label>商品名:

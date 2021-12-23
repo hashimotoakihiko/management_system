@@ -1,3 +1,12 @@
+    
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
 .header{
 	width:420px;
     background-color:gray;
@@ -13,6 +22,7 @@
 
 form {
     padding-top: 20px;
+    padding-left:300px;
 }
 
 input[type=text]{
@@ -38,6 +48,25 @@ label{
     width:90px;
 }
 
+.footer{
+  margin-top: 30px;
+}
+
+.product_information_details{
+    width: 300px;
+    text-align: center;
+    line-height:2;
+    margin-right: 200px;
+}
+
+.return{
+    width: 300px;
+    text-align: center;
+    line-height:2;
+    margin-right: 200px;
+}
+
+
 input[type=submit]{
     margin-left:100px;
     background-color:#525252;
@@ -48,9 +77,3 @@ input[type=submit]{
     margin-bottom: 50px;
 }
 
-.product_information_details{
-    width: 300px;
-    text-align: center;
-    line-height:2;
-    margin-right: 200px;
-}

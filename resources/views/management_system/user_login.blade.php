@@ -5,7 +5,68 @@
 <link rel="stylesheet" href="user_login.css">
 <!-- <style>
 
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
 
+.header{
+  padding-bottom: 50px;
+}
+
+.header{
+  width:420px;
+  background-color:gray;
+  padding: auto;
+  text-align: center;
+  border-radius:5px;
+  border:solid #000;
+  height: 150px;
+  margin: auto;
+  font-family:fantasy;
+  font-size: 25px;
+}
+
+form {
+  padding: 20px;
+	padding-left:300px;
+}
+
+input[type=text]{
+	width:320px;
+}
+
+.content{
+	width:320px;
+}
+
+label{
+	width:120px;
+   
+}
+
+.user_login{
+	height: 60px;
+}
+
+.user_registration{
+  height: 60px;
+}
+
+.footer{
+  margin-top: 30px;
+}
+
+input[type=submit]{
+  background-color:#525252;
+	color:#FFF;
+	font-weight:bold;
+	display:block;
+	padding:3px 15px;
+}
 
 </style> -->
 <meta charset="UTF-8">
@@ -13,21 +74,14 @@
 </head>
 <body>
 
-
-
 <div class="header">
-	<h1>ユーザーログイン</h1>
+	<h1>vending machine</h1>
 </div>
 
 <form name="add_form" action="http://localhost/******" method="post">
 
   <div class="content">
-    <!--<div class="name">-->
-    <!--  <label>ユーザー名:-->
-    <!--    <input type="text" name="name" placeholder="ユーザー名を入力">-->
-    <!--  </label>-->
-    <!--</div>-->
-
+    <h2>ユーザーログイン</h2>
     <div class="email">
       <label>メールアドレス:
         <input type="text" name="email" placeholder="メールアドレスを入力">

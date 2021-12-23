@@ -1,3 +1,10 @@
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
 
 .header{
 	width:420px;
@@ -14,41 +21,33 @@
 
 form {
     padding-top: 20px;
+    padding-left:300px;
 }
 
 input[type=text]{
 	width:200px;
 }
 
-/* ================= */
 .content{
 	width:320px;
 	height:220px;
 }
-/* ================= */
 
 label{
 	width:90px;
-	/*text-align: center;*/
-	/*background-color: green;*/
+}
+
+.footer{
+  margin-top: 30px;
 }
 
 .registration{
+    /*ボタン同士の間隔*/
 	height: 60px;
-}
-
-input[type=submit]{
-	margin-left:100px;
-    background-color:#525252;
-	color:#FFF;
-	font-weight:bold;
-	display:block;
-	padding:3px 40px;
 }
 
 .product_information_new_registration{
     width: 300px;
-    /*background-color: red;*/
     text-align: center;
     line-height:2;
     margin-right: 200px;
@@ -58,8 +57,16 @@ input[type=submit]{
     width: 100px;
     height: 100px;
     background-color: blue;
-    /*text-align: center;*/
     line-height:2;
     margin-left: 100px;
     margin-bottom: 20px;
+}
+
+input[type=submit]{
+	margin-left:100px;
+    background-color:#525252;
+	color:#FFF;
+	font-weight:bold;
+	display:block;
+	padding:3px 40px;
 }

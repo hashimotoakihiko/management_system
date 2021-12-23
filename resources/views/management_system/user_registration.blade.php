@@ -5,7 +5,65 @@
 <link rel="stylesheet" href="user_registration.css">
 <!-- <style>
 
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
 
+.header{
+  padding-bottom: 50px;
+}
+
+.header{
+  width:420px;
+  background-color:gray;
+  padding: auto;
+  text-align: center;
+  border-radius:5px;
+  border:solid #000;
+  height: 150px;
+  margin: auto;
+  font-family:fantasy;
+  font-size: 25px;
+}
+
+form {
+    padding: 20px;
+    padding-left:300px;
+}
+
+input[type=text]{
+	width:320px;
+}
+
+.content{
+	width:320px;
+
+}
+
+label{
+	width:120px;
+   
+}
+
+.registration{
+	height: 60px;
+}
+
+.footer{
+  margin-top: 30px;
+}
+
+input[type=submit]{
+  background-color:#525252;
+	color:#FFF;
+	font-weight:bold;
+	display:block;
+	padding:3px 15px;
+}
 
 </style> -->
 <meta charset="UTF-8">
@@ -13,18 +71,17 @@
 </head>
 <body>
 
-
-
 <div class="header">
-	<h1>ユーザー登録</h1>
+	<h1>vending machine</h1>
 </div>
 
 <form name="add_form" action="http://localhost/user_login.blade.php" method="post">
 
   <div class="content">
+  <h2>新規ユーザー</h2>
     <div class="name">
       <label>ユーザー名:
-        <input type="text" name="name" placeholder="ユーザー名を入力">-->
+        <input type="text" name="name" placeholder="ユーザー名を入力">
       </label>
     </div>
 
