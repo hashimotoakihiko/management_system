@@ -2,15 +2,13 @@
 
 namespace App\Models\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Management_system extends Model
 {
-    // use HasFactory;
     //※Model作成時に自動生成。
-
-    protected $table ='users';
+    use HasFactory;
 
     //テーブル名
     protected $table ='users';
@@ -35,27 +33,27 @@ class Management_system extends Model
     ];
 
     // //テーブル名
-    // protected $table ='products';
+    protected $table ='products';
 
-    // //可変項目
-    // protected $fillable = 
-    // [
-    //     ['id'],
-    //     ['company_id'],
-    //     ['product_name',100],
-    //     ['price'],
-    //     ['stock'],
-    //     ['comment']
-    // ];
+    //可変項目
+    protected $fillable = 
+    [
+        ['id'],
+        ['company_id'],
+        ['product_name',100],
+        ['price'],
+        ['stock'],
+        ['comment']
+    ];
 
-    // //テーブル名
-    // protected $table ='sales';
+    //テーブル名
+    protected $table ='sales';
 
-    // //可変項目
-    // protected $fillable = 
-    // [
-    //     ['id'],
-    //     ['product_id']
-    // ];
+    //可変項目
+    protected $fillable = 
+    [
+        ['id'],
+        ['product_id']
+    ];
 
 }
