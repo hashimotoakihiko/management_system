@@ -21,39 +21,39 @@ class Management_system extends Model
         ['password',100]
     ];
     
-    //テーブル名
-    protected $table ='companies';
+    // //テーブル名
+    // protected $table ='companies';
 
-    //可変項目
-    protected $fillable = 
-    [
-        ['id'],
-        ['company_name',100],
-        ['street_address']
-    ];
+    // //可変項目
+    // protected $fillable = 
+    // [
+    //     ['id'],
+    //     ['company_name',100],
+    //     ['street_address']
+    // ];
+
+    // // //テーブル名
+    // protected $table ='products';
+
+    // //可変項目
+    // protected $fillable = 
+    // [
+    //     ['id'],
+    //     ['company_id'],
+    //     ['product_name',100],
+    //     ['price'],
+    //     ['stock'],
+    //     ['comment']
+    // ];
 
     // //テーブル名
-    protected $table ='products';
+    // protected $table ='sales';
 
-    //可変項目
-    protected $fillable = 
-    [
-        ['id'],
-        ['company_id'],
-        ['product_name',100],
-        ['price'],
-        ['stock'],
-        ['comment']
-    ];
-
-    //テーブル名
-    protected $table ='sales';
-
-    //可変項目
-    protected $fillable = 
-    [
-        ['id'],
-        ['product_id']
-    ];
+    // //可変項目
+    // protected $fillable = 
+    // [
+    //     ['id'],
+    //     ['product_id']
+    // ];
 
 }
