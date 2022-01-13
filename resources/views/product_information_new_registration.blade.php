@@ -3,7 +3,7 @@
 <html lang="ja"> </html>
 <head>
 <link rel="stylesheet" href="product_information_new_registration.css">
-<!-- <style>
+<style>
 
 body {
     height: 100%;
@@ -28,7 +28,7 @@ body {
 
 form {
     padding-top: 20px;
-    padding-left:300px;
+    padding-left:500px;
 }
 
 input[type=text]{
@@ -78,7 +78,7 @@ input[type=submit]{
 	padding:3px 40px;
 }
 
-</style> -->
+</style>
 <meta charset="UTF-8">
 <title>会員登録</title>
 </head>

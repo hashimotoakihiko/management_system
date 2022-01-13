@@ -101,7 +101,7 @@ input[type=submit]{
 	<h1>vending machine</h1>
 </div>
 
-<form name="add_form" action="http://localhost/user_login.blade.php" method="post">
+<form name="add_form" action="http://localhost/8888" method="post">
 
     <div class="content">
         <h2>商品情報一覧</h2>

@@ -5,7 +5,7 @@ namespace App\Models\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Management_system extends Model
+class User extends Model
 {
     //※Model作成時に自動生成。
     use HasFactory;

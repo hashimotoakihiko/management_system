@@ -2,8 +2,7 @@
 <html>
 <html lang="ja"> </html>
 <head>
-<link rel="stylesheet" href="user_login.css">
-<!-- <style>
+<style>
 
 body {
   height: 100%;
@@ -32,7 +31,7 @@ body {
 
 form {
   padding: 20px;
-	padding-left:300px;
+	padding-left:500px;
 }
 
 input[type=text]{
@@ -68,9 +67,11 @@ input[type=submit]{
 	padding:3px 15px;
 }
 
-</style> -->
+</style> 
 <meta charset="UTF-8">
 <title>会員登録</title>
+<link rel=”stylesheet” href="./css/user_login.css">
+
 </head>
 <body>
 
@@ -78,7 +79,7 @@ input[type=submit]{
 	<h1>vending machine</h1>
 </div>
 
-<form name="add_form" action="http://localhost/******" method="post">
+<form name="add_form" method="post">
 
   <div class="content">
     <h2>ユーザーログイン</h2>
@@ -98,11 +99,13 @@ input[type=submit]{
 
   <div class="footer">
     <div class="user_login">
-      <input type="submit" value="ログイン" action="http://localhost/product_information_list.html">
+      <input type="submit" value="ログイン"> 
+      <a herf="http://localhost8888/product_information_list.html">
     </div>
     
     <div class="user_registration">
-      <input type="submit" value="新規登録" action="http://localhost/user_registration.html">
+      <input type="submit" value="新規登録">
+      <a herf="http://localhost8888/user_registration.html">
     </div>
   </div>
 

@@ -13,12 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Route::get("/user_login", [UserController::class, "showList"]);
+
+Route::get("user_login", "UserController@showList");
+
+Route::get("product_information_list", "UserController@showList");
+
+//Route::get("/user_login", [UserController::class,"showList"]);
 // Route::get('/', function () {
-//     return view('product_information_list');
+//     echo 'user_login';
 // });
 
 // Route::get('/', function () {
 //     return view('product_information_list');
 // });
     
-Route::get('samplepost', 'Management_systemController@showList');
+//Route::get('samplepost', 'Management_systemController@showList');

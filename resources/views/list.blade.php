@@ -3,7 +3,7 @@
 <html lang="ja"> </html>
 <head>
 <link rel="stylesheet" href="product_information_list.css">
-<!-- <style>
+<style>
 
 body {
     height: 100%;
@@ -91,7 +91,7 @@ input[type=submit]{
     margin: auto;
 }
 
-</style> -->
+</style>
 <meta charset="UTF-8">
 <title>会員登録</title>
 </head>

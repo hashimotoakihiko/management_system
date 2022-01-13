@@ -3,7 +3,7 @@
 <html lang="ja"> </html>
 <head>
 <link rel="stylesheet" href="product_information_details.css">
-<!-- <style>
+<style>
 
 body {
     height: 100%;
@@ -85,7 +85,7 @@ input[type=submit]{
 
 
 
-</style> -->
+</style> 
 <meta charset="UTF-8">
 <title>会員登録</title>
 </head>
