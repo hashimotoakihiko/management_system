@@ -18,9 +18,4 @@ class UserController extends Controller
     {
         return view("user_login");
     }
-
-    // public function post ()
-    // {
-    //     return view("product_information_list");
-    // }
 }

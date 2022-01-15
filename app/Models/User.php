@@ -21,18 +21,9 @@ class User extends Model
         ['password',100]
     ];
     
+   
+
     // //テーブル名
-    // protected $table ='companies';
-
-    // //可変項目
-    // protected $fillable = 
-    // [
-    //     ['id'],
-    //     ['company_name',100],
-    //     ['street_address']
-    // ];
-
-    // // //テーブル名
     // protected $table ='products';
 
     // //可変項目

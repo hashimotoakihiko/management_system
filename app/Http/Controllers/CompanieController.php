@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\companies;
-use App\Http\Requests\UserRequest;
+use App\Models\Companie;
+use App\Http\Requests\CompanieRequest;
 
-class companiesController extends Controller
+class CompanieController extends Controller
 {
     
     /**
@@ -15,7 +15,7 @@ class companiesController extends Controller
      * @return view
      */
 
-    public function showList ()
+    public function uploaded ()
     {
         return view("product_information_list");
     }

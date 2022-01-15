@@ -101,7 +101,7 @@ input[type=submit]{
 	<h1>vending machine</h1>
 </div>
 
-<form name="add_form" action="http://localhost/8888" method="post">
+<!-- <form name="add_form" action="http://localhost/8888" method="post"> -->
 
     <div class="content">
         <h2>商品情報一覧</h2>
@@ -109,7 +109,7 @@ input[type=submit]{
         <div class="product_search">
             <div class="product_name">
                 <label>商品名:
-                    <form action="{{ route('product_information_list') }}" method="GET">
+                    <form action="{{ route('product_information_list') }}" method="post">
                         <input type="text" name="product_name" placeholder="商品名を入力" value="{{ $product_name ?? '' }}">
                         <input type="submit" value="検索">
                     </form>
@@ -118,7 +118,7 @@ input[type=submit]{
             
             <div class="company_name">
                 <label>メーカー名:
-                    <form action="{{ route('companies') }}" method="GET">
+                    <form action="{{ route('companies') }}" method="post">
                         <input type="text" name="company_name" placeholder="メーカー名を入力" value="{{ $company_name }}">
                         <input type="submit" value="検索">
                     </form>
@@ -204,7 +204,7 @@ input[type=submit]{
     </div>
     
     
-</form>
+<!-- </form> -->
 
 
 </body>

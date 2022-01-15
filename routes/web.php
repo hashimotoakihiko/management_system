@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get("/user_login", [UserController::class, "showList"]);
 
-Route::get("user_login", "UserController@showList");
+Route::get("user_login", "UserController@showList")->name
+('users');
 
-Route::get("product_information_list", "UserController@showList");
+Route::post("product_information_list", "CompanieController@showList2")->name
+('companies');
 
 //Route::get("/user_login", [UserController::class,"showList"]);
 // Route::get('/', function () {
