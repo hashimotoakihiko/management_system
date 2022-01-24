@@ -81,6 +81,7 @@ input[type=submit]{
 
 <form name="add_form" method="post">
 
+
   <div class="content">
     <h2>ユーザーログイン</h2>
     <div class="email">
@@ -100,12 +101,12 @@ input[type=submit]{
   <div class="footer">
     <div class="user_login">
       <input type="submit" value="ログイン"> 
-      <a herf="http://localhost8888/product_information_list.html">
+      <a herf="http://localhost:8888//product_information_list">
     </div>
     
     <div class="user_registration">
       <input type="submit" value="新規登録">
-      <a herf="http://localhost8888/user_registration.html">
+      <a herf="http://localhost:8888//user_registration">
     </div>
   </div>
 

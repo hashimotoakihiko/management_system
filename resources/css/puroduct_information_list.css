@@ -21,6 +21,7 @@ body {
 
 form {
     padding: 20px;
+    height: 50px;
 }
 
 input[type=text]{

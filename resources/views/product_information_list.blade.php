@@ -3,7 +3,7 @@
 <html lang="ja"> </html>
 <head>
 <link rel="stylesheet" href="product_information_list.css">
-<!-- <style>
+<style>
 
 body {
     height: 100%;
@@ -28,6 +28,7 @@ body {
 
 form {
     padding: 20px;
+    height: 200px;
 }
 
 input[type=text]{
@@ -62,16 +63,18 @@ input[type=submit]{
 	font-weight:bold;
 	display:block;
 	padding:3px 20px;
-	display:inline-block;
+	/display:inline-block; 
 	
 }
 
 .product_name{
 	margin: auto;
+    height: 30px;
 }
 
 .company_name{
 	margin: auto;
+    height: 30px;
 }
 
 .product_information_list{
@@ -91,7 +94,7 @@ input[type=submit]{
     margin: auto;
 }
 
-</style> -->
+</style> 
 <meta charset="UTF-8">
 <title>会員登録</title>
 </head>
@@ -101,41 +104,47 @@ input[type=submit]{
 	<h1>vending machine</h1>
 </div>
 
-<!-- <form name="add_form" action="http://localhost/8888" method="post"> -->
+<form name="add_form" action="http://localhost:8888//product_information_list" method="post">
 
     <div class="content">
         <h2>商品情報一覧</h2>
 
         <div class="product_search">
             <div class="product_name">
-                <label>商品名:
-                    <form action="{{ route('product_information_list') }}" method="post">
-                        <input type="text" name="product_name" placeholder="商品名を入力" value="{{ $product_name ?? '' }}">
+                <label>商品名: 
+                    <form method="POST" action="{{ route('showLogin') }}" >
+                    @csrf
+                        <input type="text" name="product_name" placeholder="商品名を入力" > 
                         <input type="submit" value="検索">
                     </form>
+                    <!-- <form action="/post/create" method="post"> -->
                 </label>
             </div>
             
             <div class="company_name">
                 <label>メーカー名:
-                    <form action="{{ route('companies') }}" method="post">
-                        <input type="text" name="company_name" placeholder="メーカー名を入力" value="{{ $company_name }}">
+                    <form method="POST" action="{{ route('Login') }}" >
+                    @csrf
+                        <input type="text" name="company_name" placeholder="メーカー名を入力" >
                         <input type="submit" value="検索">
                     </form>
                     
-                    <input type="text" name="company_name" placeholder="メーカー名を入力">
-                    <input type="submit" value="検索"> -->
+                    <!-- <input type="text" name="company_name" placeholder="メーカー名を入力"> -->
+                    <!-- <input type="submit" value="検索">  -->
 
                     <!-- 頭文字3桁での検索可能(部分一致) -->
                     <!-- companiesテーブルに登録されている企業から選択できるようにする -->
                     <!-- リダイレクトの記述(結果表示) -->
                 </label>
             </div>
-        </div>  -->
         
-        <div class="new_registration">
-            <input type="submit"  formaction="product_information_new_registration"  name="new_registration"  value="新規登録">
-        </div>
+            <div class="new_registration">
+                <form method="POST" action="{{ route('Login') }}">
+                 <input type="submit" value="新規登録"> 
+                </form>
+            </div>
+        
+
     </div>
 
 

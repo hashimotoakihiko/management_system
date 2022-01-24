@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\Request\LoginFormRequest;
 use App\Models\Companie;
 use App\Http\Requests\CompanieRequest;
 
@@ -15,8 +15,14 @@ class CompanieController extends Controller
      * @return view
      */
 
-    public function uploaded ()
+    public function Login()
     {
-        return view("product_information_list");
+        return view ('product_information_list');
+    }
+
+    public function new_registration()
+    {
+        return view ('product_information_new_registration');
     }
 }
+

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\Request\LoginFormRequest;
 use App\Models\User;
 use App\Http\Requests\UserRequest;
 
@@ -14,8 +14,26 @@ class UserController extends Controller
      * @return view
      */
 
-    public function showList ()
+    public function showLogin ()
     {
-        return view("user_login");
+        return view('user_login');
     }
+    
+    // public function Login()
+    // {
+    //     return view ('product_information_list');
+    // }
+
+    // public function new_registration()
+    // {
+    //     return view ('product_information_new_registration');
+    // }
+    
+
+    // public function login(LoginFormRequest $request) 
+    // {
+    //     dd($request->all());
+    // }
+
+    
 }

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CompanieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,21 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get("/user_login", [UserController::class, "showList"]);
+Route::get('/', function (){
+  return view('user_login');
+});
 
-Route::get("user_login", "UserController@showList")->name
-('users');
-
-Route::post("product_information_list", "CompanieController@showList2")->name
-('companies');
-
-//Route::get("/user_login", [UserController::class,"showList"]);
-// Route::get('/', function () {
-//     echo 'user_login';
+// Route::get('user_login', function (){
+//   return view('product_information_list');
 // });
 
-// Route::get('/', function () {
-//     return view('product_information_list');
-// });
-    
-//Route::get('samplepost', 'Management_systemController@showList');
+Route::get('/user_login', [UserController::class,'showLogin'])->name
+('showLogin');
+
+Route::get('/product_information_list', [CompanieController::class,'Login'])->name
+('Login');
+
+Route::get('/product_information_new_registration', [CompanieController::class,'new_registration'])->name
+('Login');
