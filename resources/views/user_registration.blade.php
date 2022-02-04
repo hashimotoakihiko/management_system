@@ -1,74 +1,13 @@
 <!DOCTYPE html>
-<html>
-<html lang="ja"> </html>
+<html lang="ja">
 <head>
-<link rel="stylesheet" href="user_registration.css">
-<style>
-
-body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background-color: white;
-}
-
-.header{
-  padding-bottom: 50px;
-}
-
-.header{
-  width:420px;
-  background-color:gray;
-  padding: auto;
-  text-align: center;
-  border-radius:5px;
-  border:solid #000;
-  height: 150px;
-  margin: auto;
-  font-family:fantasy;
-  font-size: 25px;
-}
-
-form {
-    padding: 20px;
-    padding-left:500px;
-}
-
-input[type=text]{
-	width:320px;
-}
-
-.content{
-	width:320px;
-
-}
-
-label{
-	width:120px;
-   
-}
-
-.registration{
-	height: 60px;
-}
-
-.footer{
-  margin-top: 30px;
-}
-
-input[type=submit]{
-  background-color:#525252;
-	color:#FFF;
-	font-weight:bold;
-	display:block;
-	padding:3px 15px;
-}
-
-</style>
-<meta charset="UTF-8">
-<title>会員登録</title>
+  <link rel='stylesheet' href='./css/user_registration.css'>
+  <meta charset="UTF-8">
+  <title>会員登録</title>
+  <style>
+  </style>
 </head>
+
 <body>
 
 <div class="header">

@@ -4,22 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-//use  App\Models\User;
 
-class User extends Model
+class Sale extends Model
 {
-    //※Model作成時に自動生成。
     use HasFactory;
 
     //テーブル名
-    protected $table ='users';
+    protected $table ='sales';
 
     //可変項目
     protected $fillable = 
     [
-        ['id'],
-        ['email'],
-        ['password',100]
+       ['id'],
+       ['product_id']
     ];
-
 }

@@ -10,19 +10,18 @@ class CompanieController extends Controller
 {
     
     /**
-     * ブログ一覧を表示する
+     * 一覧を表示する
      * 
      * @return view
      */
 
-    public function Login()
+    public function showList()
     {
-        return view ('product_information_list');
+        //return view ('product_information_list');
     }
 
-    public function new_registration()
-    {
-        return view ('product_information_new_registration');
-    }
+    
+
+   
 }
 

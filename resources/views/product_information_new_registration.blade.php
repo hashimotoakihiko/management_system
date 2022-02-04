@@ -1,90 +1,15 @@
+
 <!DOCTYPE html>
-<html>
-<html lang="ja"> </html>
+<html lang="ja">
 <head>
-<link rel="stylesheet" href="product_information_new_registration.css">
-<style>
-
-body {
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    background-color: white;
-}
-
-.header{
-	width:420px;
-    background-color:gray;
-    padding: auto;
-    text-align: center;
-	border-radius:5px;
-	border:solid #000;
-    height: 150px;
-    margin: auto;
-    font-family:fantasy;
-    font-size: 25px;
-}
-
-form {
-    padding-top: 20px;
-    padding-left:500px;
-}
-
-input[type=text]{
-	width:200px;
-}
-
-.content{
-	width:320px;
-	height:220px;
-}
-
-label{
-	width:90px;
-}
-
-.footer{
-  margin-top: 30px;
-}
-
-.registration{
-    /*ボタン同士の間隔*/
-	height: 60px;
-}
-
-.product_information_new_registration{
-    width: 300px;
-    text-align: center;
-    line-height:2;
-    margin-right: 200px;
-}
-
-.product_information_image{
-    width: 100px;
-    height: 100px;
-    background-color: blue;
-    line-height:2;
-    margin-left: 100px;
-    margin-bottom: 20px;
-}
-
-input[type=submit]{
-	margin-left:100px;
-    background-color:#525252;
-	color:#FFF;
-	font-weight:bold;
-	display:block;
-	padding:3px 40px;
-}
-
-</style>
-<meta charset="UTF-8">
-<title>会員登録</title>
+    <link rel='stylesheet' href='./css/product_information_new_registration.css'>
+    <meta charset="UTF-8">
+    <title>会員登録</title>
+    <style>
+    </style> 
 </head>
+
 <body>
-
-
 
 <div class="header">
 	<h1>vending machine</h1>

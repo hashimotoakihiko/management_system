@@ -1,0 +1,97 @@
+
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0 auto;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.header{
+	width:420px;
+    background-color:yellow;
+    padding: auto;
+    text-align: center;
+	border-radius:5px;
+	border:solid #000;
+    height: 150px;
+    margin: auto;
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+}
+
+
+input[type=submit]{
+    background-color:#525252;
+    color:#FFF;
+    font-weight:bold;
+    display:block;
+    /* padding:3px 20px; */
+    display:inline-block; 
+    margin: auto;
+            
+}
+
+input[type=text]{
+    width:300px;
+}
+
+.content{
+	width:420px;
+	height:220px;
+	margin: auto; 
+}
+
+        label{
+            width:420px;
+            height: 30px;
+            background-color: green;
+            /* margin: auto; */
+        }
+
+        .product_search{
+            width: 420px;
+            height: 200px;
+        }
+
+        .new_registration{
+            height: 50px;
+            /* padding-top: 30px; */
+            text-align:center;
+            margin-top:20px;
+        }
+
+        .product_name{
+            /* margin: auto; */
+            height: 50px;
+        }
+
+        .company_name{
+            /* margin: auto; */
+            height: 50px;
+        }
+
+        .product_information_list{
+            width: 400px;
+            text-align: center;
+            line-height:2;
+            height: 350px;
+            margin: auto;
+        }
+
+        .product_information_image{
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height:2;
+            margin: auto;
+        }
+
+.footer{
+    width:420px;
+	height:220px;
+	margin: auto; 
+    text-align: center;
+   
+
+}

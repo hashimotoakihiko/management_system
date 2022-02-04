@@ -1,120 +1,29 @@
 <!DOCTYPE html>
-<html>
-<html lang="ja"> </html>
+<html lang="ja">
 <head>
-<link rel="stylesheet" href="product_information_list.css">
-<style>
-
-body {
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    background-color: white;
-}
-
-.header{
-	width:420px;
-    background-color:gray;
-    padding: auto;
-    text-align: center;
-	border-radius:5px;
-	border:solid #000;
-    height: 150px;
-    margin: auto;
-    font-family:fantasy;
-    font-size: 25px;
-}
-
-form {
-    padding: 20px;
-    height: 200px;
-}
-
-input[type=text]{
-	width:200px;
-}
-
-.content{
-	width:320px;
-	height:220px;
-	margin: auto;
-}
-
-label{
-	width:90px;
-	background-color: green;
-	margin: auto;
-}
-
-.product_search{
-    width: 320px;
-}
-
-.new_registration{
-	height: 60px;
-	padding-top: 30px;
-	
-}
-
-input[type=submit]{
-    background-color:#525252;
-	color:#FFF;
-	font-weight:bold;
-	display:block;
-	padding:3px 20px;
-	/display:inline-block; 
-	
-}
-
-.product_name{
-	margin: auto;
-    height: 30px;
-}
-
-.company_name{
-	margin: auto;
-    height: 30px;
-}
-
-.product_information_list{
-    width: 400px;
-    text-align: center;
-    line-height:2;
-    height: 350px;
-    text-align:center;
-    margin: auto;
-}
-
-.product_information_image{
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    line-height:2;
-    margin: auto;
-}
-
-</style> 
-<meta charset="UTF-8">
-<title>会員登録</title>
+    <link rel='stylesheet' href='./css/puroduct_information_list.css'>
+    <meta charset="UTF-8">
+    <title>会員登録</title>
+    <style>
+    </style> 
 </head>
+
 <body>
 
 <div class="header">
 	<h1>vending machine</h1>
 </div>
 
-<form name="add_form" action="http://localhost:8888//product_information_list" method="post">
+<!-- <form name="add_form" action="http://localhost:8888//product_information_list" method="post"> -->
 
     <div class="content">
         <h2>商品情報一覧</h2>
-
         <div class="product_search">
             <div class="product_name">
                 <label>商品名: 
                     <form method="POST" action="{{ route('showLogin') }}" >
-                    @csrf
-                        <input type="text" name="product_name" placeholder="商品名を入力" > 
+                        @csrf
+                        <input type="text" name="product_id"  value="{$user['id']}" placeholder="商品名を入力" > 
                         <input type="submit" value="検索">
                     </form>
                     <!-- <form action="/post/create" method="post"> -->
@@ -124,17 +33,15 @@ input[type=submit]{
             <div class="company_name">
                 <label>メーカー名:
                     <form method="POST" action="{{ route('Login') }}" >
-                    @csrf
-                        <input type="text" name="company_name" placeholder="メーカー名を入力" >
+                        @csrf
+                        <input type="text" name="company_name" placeholder="メーカー名を入力">
                         <input type="submit" value="検索">
                     </form>
-                    
-                    <!-- <input type="text" name="company_name" placeholder="メーカー名を入力"> -->
-                    <!-- <input type="submit" value="検索">  -->
 
                     <!-- 頭文字3桁での検索可能(部分一致) -->
                     <!-- companiesテーブルに登録されている企業から選択できるようにする -->
                     <!-- リダイレクトの記述(結果表示) -->
+
                 </label>
             </div>
         
@@ -143,8 +50,7 @@ input[type=submit]{
                  <input type="submit" value="新規登録"> 
                 </form>
             </div>
-        
-
+        </div>
     </div>
 
 

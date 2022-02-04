@@ -1,23 +1,41 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request\LoginFormRequest;
+use Illuminate\Http\Request;
+// use Illuminate\Http\Request\LoginFormRequest;
 use App\Models\User;
-use App\Http\Requests\UserRequest;
+// use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
     /**
-     * ブログ一覧を表示する
+     * トップページを表示する
      * 
      * @return view
      */
 
     public function showLogin ()
     {
-        return view('user_login');
+        $users = User::all();
+        
+        dd($users);
+
+        // return view('user_login',
+        // ['users' => $users]);
+
+        return view('user_login',
+        ['users' => $users]);
+        
     }
+
+    // public function Login()
+    // {
+    //     return view ('product_information_list');
+    // }
+
+    
+
+    
     
     // public function Login()
     // {

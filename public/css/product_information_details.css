@@ -8,14 +8,14 @@ body {
 
 .header{
 	width:420px;
-    background-color:gray;
+    background-color:yellow;
     padding: auto;
     text-align: center;
 	border-radius:5px;
 	border:solid #000;
     height: 150px;
     margin: auto;
-    font-family:fantasy;
+    font-family: 'Caveat', cursive;
     font-size: 25px;
 }
 
@@ -25,48 +25,53 @@ form {
 }
 
 input[type=text]{
-	width:200px;
+    width:200px;
 }
 
 .content{
-	width:320px;
-	height:220px;
-}
-
-label{
-	width:90px;
-}
-
-.footer{
-  margin-top: 30px;
-}
-
-.registration{
-    /*ボタン同士の間隔*/
-	height: 60px;
-}
-
-.product_information_new_registration{
-    width: 300px;
-    text-align: center;
-    line-height:2;
-    margin-right: 200px;
+    width:320px;
+    height:290px;
 }
 
 .product_information_image{
     width: 100px;
     height: 100px;
     background-color: blue;
+    /*text-align: center;*/
     line-height:2;
     margin-left: 100px;
     margin-bottom: 20px;
 }
 
+label{
+    width:90px;
+}
+
+.footer{
+  margin-top: 30px;
+}
+
+.product_information_details{
+    width: 300px;
+    text-align: center;
+    line-height:2;
+    margin-right: 200px;
+}
+
+.return{
+    width: 300px;
+    text-align: center;
+    line-height:2;
+    margin-right: 200px;
+}
+
+
 input[type=submit]{
-	margin-left:100px;
+    margin-left:100px;
     background-color:#525252;
-	color:#FFF;
-	font-weight:bold;
-	display:block;
-	padding:3px 40px;
+    color:#FFF;
+    font-weight:bold;
+    display:block;
+    padding:3px 40px;
+    margin-bottom: 50px;
 }
