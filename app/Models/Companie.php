@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,8 +15,8 @@ class Companie extends Model
     //可変項目
     protected $fillable = 
     [
-        ['id'],
-        ['company_name',100],
-        ['street_address']
+        'id',
+        'company_name',
+        'street_address'
     ];
 }

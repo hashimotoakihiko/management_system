@@ -1,9 +1,8 @@
 <?php
 
 namespace Database\Seeders;
-
 use Illuminate\Database\Seeder;
-use App\Models\Companei;
+use App\Models\Companie;
 
 class CompaniesTableSeeder extends Seeder
 {
@@ -15,5 +14,6 @@ class CompaniesTableSeeder extends Seeder
     public function run()
     {
         //
+        \App\Models\Companie::factory()->count(15)->create();
     }
 }

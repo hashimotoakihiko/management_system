@@ -22,7 +22,7 @@ class CreateSalesTable extends Migration
             Schema::create('sales', function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->timestamps();
-                $table->integer('product_id');
+                $table->unsignedInteger('product_id');
             });
         }
     }

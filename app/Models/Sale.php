@@ -15,7 +15,7 @@ class Sale extends Model
     //可変項目
     protected $fillable = 
     [
-       ['id'],
-       ['product_id']
+       'id',
+       'product_id'
     ];
 }

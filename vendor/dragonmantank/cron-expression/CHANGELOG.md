@@ -27,11 +27,11 @@
 
 ## [3.0.0] - 2020-03-25
 
-**MAJOR CHANGE** - In previous versions of this library, setting both a "Day of Month" and a "Day of Week" would be interpreted as an `AND` statement, not an `OR` statement. For example:
+**MAJOR CHANGE** - In previous versions of this library, setting both a 'Day of Month' and a 'Day of Week' would be interpreted as an `AND` statement, not an `OR` statement. For example:
 
 `30 0 1 * 1`
 
-would evaluate to "Run 30 minutes after the 0 hour when the Day Of Month is 1 AND a Monday" instead of "Run 30 minutes after the 0 hour on Day Of Month 1 OR a Monday", where the latter is more inline with most cron systems. This means that if your cron expression has both of these fields set, you may see your expression fire more often starting with v3.0.0. 
+would evaluate to 'Run 30 minutes after the 0 hour when the Day Of Month is 1 AND a Monday' instead of 'Run 30 minutes after the 0 hour on Day Of Month 1 OR a Monday', where the latter is more inline with most cron systems. This means that if your cron expression has both of these fields set, you may see your expression fire more often starting with v3.0.0. 
 
 ### Added
 - Additional docblocks for IDE and documentation

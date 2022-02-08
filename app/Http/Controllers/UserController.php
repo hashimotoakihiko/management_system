@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-// use Illuminate\Http\Request\LoginFormRequest;
 use App\Models\User;
+//use Illuminate\Http\Request\LoginFormRequest;
+
 // use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
@@ -18,7 +19,7 @@ class UserController extends Controller
     {
         $users = User::all();
         
-        dd($users);
+        //dd($users);
 
         // return view('user_login',
         // ['users' => $users]);

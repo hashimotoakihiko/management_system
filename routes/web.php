@@ -24,8 +24,6 @@ use App\Http\Controllers\CompanieController;
 // ('user_login');
 
 
-
-
 //ログイン画面表示
 Route::get('/', 
 'UserController@showLogin')->name
