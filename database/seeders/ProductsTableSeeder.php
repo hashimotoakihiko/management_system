@@ -13,7 +13,12 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
         \App\Models\Product::factory()->count(15)->create();
+        // DB::table('products')->insert([
+        //     ['company_id' => '1'],
+        //     ['company_id' => '2'],
+        //     ['company_id' => '3']
+        // ]);
+    
     }
 }

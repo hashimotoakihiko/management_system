@@ -15,5 +15,6 @@ class UsersTableSeeder extends Seeder
     {
         //factory(User::class,15)->create();
         \App\Models\User::factory()->count(15)->create();
+       
     }
 }
