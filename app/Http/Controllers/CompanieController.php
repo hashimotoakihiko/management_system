@@ -17,7 +17,7 @@ class CompanieController extends Controller
 
     public function showList()
     {
-        //return view ('product_information_list');
+        return view ('product_information_list');
     }
 
     

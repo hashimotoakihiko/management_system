@@ -23,19 +23,17 @@
             <input type="text" name="email" placeholder="メールアドレスを入力">
             @foreach($users as $user)
             {{$user->email}}
-            @endforeach       
-                    
+            @endforeach        
         </label>
       
     </div>
 
     <div class="pass">
         <label>パスワード: 
-            <input type="text" name="パスワード" placeholder="パスワードを入力" >
+            <input type="text" name="パスワード" placeholder="パスワードを入力">
             @foreach($users as $user)
             {{$user->password}} 
-            @endforeach
-                
+            @endforeach       
         </label>
        
     </div>
@@ -44,11 +42,13 @@
 
 <div class="footer">
     <div class="user_login">
-        <input type="submit" value="ログイン" a herf="http://localhost:8888//product_information_list">
+        <input type="submit" value="ログイン"> 
+        <a herf="http://localhost:8888//product_information_list">
     </div>
 
     <div class="user_registration">
-        <input type="submit" value="新規登録" a herf="http://localhost:8888//user_registration">
+        <input type="submit" value="新規登録"> 
+        <a herf="http://localhost:8888//user_registration">
     </div>
 </div>
 

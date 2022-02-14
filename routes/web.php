@@ -37,14 +37,14 @@ Route::get('/',
 //   return view('product_information_list');
 // });
 
-// Route::get('/user_login', [UserController::class,'showLogin'])->name
-// ('showLogin');
+Route::get('/user_login', [UserController::class,'showLogin'])->name
+('showLogin');
 
-// Route::get('/product_information_list', [CompanieController::class,'Login'])->name
-// ('Login');
+Route::get('/product_information_list', [CompanieController::class,'showList'])->name
+('product_information_list');
 
-// Route::post('/product_information_list', [UserController::class,'Login'])->name
-// ('Login');
+Route::post('/product_information_list', [UserController::class,'showList'])->name
+('showList');
 
 // Route::get('/product_information_new_registration', [CompanieController::class,'new_registration'])->name
 // ('new_registration');

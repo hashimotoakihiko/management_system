@@ -21,21 +21,21 @@
         <div class="product_search">
             <div class="product_name">
                 <label>商品名: 
-                    <form method="POST" action="{{ route('showLogin') }}" >
+                    <form method="POST" action="{{ route('showLogin') }}" > 
                         @csrf
                         <input type="text" name="product_id"  value="{$user['id']}" placeholder="商品名を入力" > 
                         <input type="submit" value="検索">
                     </form>
-                    <!-- <form action="/post/create" method="post"> -->
+                    <form action="/post/create" method="post">
                 </label>
-            </div>
+            </div> 
             
             <div class="company_name">
                 <label>メーカー名:
-                    <form method="POST" action="{{ route('Login') }}" >
+                    <form method="POST" action="{{ route('showLogin') }}" > 
                         @csrf
                         <input type="text" name="company_name" placeholder="メーカー名を入力">
-                        <input type="submit" value="検索">
+                        <input type="submit" value="検索"> 
                     </form>
 
                     <!-- 頭文字3桁での検索可能(部分一致) -->
@@ -46,7 +46,7 @@
             </div>
         
             <div class="new_registration">
-                <form method="POST" action="{{ route('Login') }}">
+                <form method="POST" action="{{ route('showLogin') }}">
                  <input type="submit" value="新規登録"> 
                 </form>
             </div>
