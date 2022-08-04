@@ -17,7 +17,12 @@ class CompanieController extends Controller
 
     public function showList()
     {
-        return view ('product_information_list');
+        $companies = Companie::all();
+
+        //dd($companies);
+
+        return view ('product_list',
+        ['companies' => $companies]);
     }
 
     

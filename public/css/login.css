@@ -1,0 +1,66 @@
+
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+
+.header{
+	padding-bottom: 50px;
+  width:420px;
+  background-color:yellow;
+  padding: auto;
+  text-align: center;
+  border-radius:5px;
+  border:solid #000;
+  height: 150px;
+  margin: auto;
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
+}
+/* 
+form{
+  text-align: center;
+}
+
+input[type=email]{
+
+}
+
+input[type=password]{
+	
+}
+
+input[type=button]{
+
+} */
+
+.content{
+	width:320px;
+	margin: auto;
+}
+
+label{
+  width:2200px;  
+}
+
+  
+.footer{
+  text-align: center;
+  padding: 40px;
+}
+
+.login{
+  margin-top: 20px;
+  height: 50px;
+  padding: 3px;
+
+}
+
+.registration{
+  margin-top: 20px;
+  height: 50px;
+  padding: 3px;
+}

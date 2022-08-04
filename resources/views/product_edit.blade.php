@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link rel='stylesheet' href='./css/product_information_edit.css'>
+    <link rel='stylesheet' href='./css/product_edit.css'>
     <meta charset="UTF-8">
     <title>会員登録</title>
     <style>
@@ -17,15 +17,14 @@
 	<h1>vending machine</h1>
 </div>
 
-<form name="add_form" action="http://localhost/user_login.blade.php" method="post">
-         
+
     <div class="content">
       <h2>商品情報編集画面</h2>
         <div class="product_information_image">
             <img src="例：image.png******" alt="例：海の写真" title="例：空と海">
         </div>
         
-        <div class="product_information_list">
+        <div class="product_list">
             <div class="product_name">
                 <label>商品名:
                     <input type="text" name="product_name">
@@ -65,15 +64,15 @@
     </div>
     
     <div class="footer">
-        <div class="product_information_edit">
-            <input type="submit" value="更新" action="http://localhost/product_information_details.blade.php">
+        <div class="product_details">
+            <button onclick="location.href='product_details'">更新</button>
         </div>
     
         <div class="return">
-            <input type="submit" value="戻る" action="http://localhost/product_information_details.blade.php">
+            <button onclick="location.href='product_details'">戻る</button>
         </div>
     </div>
-</form>
+
 
 
 </body>

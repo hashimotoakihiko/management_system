@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CompanieController;
-
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,36 +15,40 @@ use App\Http\Controllers\CompanieController;
 |
 */
 
-// Route::get('/', function (){
-//   return view('user_login');
-// });
-
-// Route::get('/', 
-// 'UserController@showLogin')->name
-// ('user_login');
-
-
 //ログイン画面表示
 Route::get('/', 
 'UserController@showLogin')->name
 ('users');
 
-// Route::get('/', 
-// 'CompanieController@showList')->name
-// ('companies');
-
-// Route::get('user_login', function (){
-//   return view('product_information_list');
-// });
-
-Route::get('/user_login', [UserController::class,'showLogin'])->name
+Route::get('/login', [UserController::class,'showLogin'])->name
 ('showLogin');
 
-Route::get('/product_information_list', [CompanieController::class,'showList'])->name
-('product_information_list');
+Route::get('/product_list', [CompanieController::class,'showList'])->name
+('showlist');
 
-Route::post('/product_information_list', [UserController::class,'showList'])->name
+Route::post('/product_list', [CompanieController::class,'showList'])->name
 ('showList');
 
-// Route::get('/product_information_new_registration', [CompanieController::class,'new_registration'])->name
-// ('new_registration');
+Route::get('/registration', [UserController::class,'new'])->name
+('new');
+
+Route::post('/registration', [UserController::class,'new'])->name
+('new');
+
+Route::get('/product_new', [ProductController::class,'product_new'])->name
+('product_new');
+
+Route::post('/product_new', [ProductController::class,'product_new'])->name
+('product_new');
+
+Route::get('/product_details', [ProductController::class,'product_details'])->name
+('product_details');
+
+Route::post('/product_details', [ProductController::class,'product_details'])->name
+('product_details');
+
+Route::get('/product_edit', [ProductController::class,'product_edit'])->name
+('product_edit');
+
+Route::post('/product_edit', [ProductController::class,'product_edit'])->name
+('product_edit');
