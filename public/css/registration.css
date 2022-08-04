@@ -30,8 +30,16 @@ label{
 	width:120px;
 }
 
+input[type=password]{
+	width:320px;
+}
+
 .registration{
 	height: 60px;
+}
+
+#errorMessage {
+  color: red;
 }
 
 .footer{
