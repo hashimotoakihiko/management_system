@@ -119,6 +119,10 @@
                    <button onclick="location.href='product_details'">削除</button>
         </div>
         <!-- 削除処理実行前にダイアログにて確認を行う -->
+
+        <div class="return">
+            <button onclick="location.href='login'">トップページへ戻る</button>
+        </div>
     </div>
 
 

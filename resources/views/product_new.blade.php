@@ -61,11 +61,11 @@
 
     <div class="footer">
         <div class="registration">
-            <a href="http://localhost:8888/product_new">商品登録</a>
+            <button onclick="location.href='product_details'">商品登録を行う</button>
         </div>
         
         <div class="return">
-            <a href="http://localhost:8888/product_list">戻る</a>
+            <button onclick="location.href='product_list'">商品一覧へ戻る</button>
         </div>
     </div>
     

@@ -27,6 +27,7 @@
 
 
 
+
     <!-- <div class="email">
         <label>メールアドレス: </label>
             <input type="email" id="email" name="email" placeholder="メールアドレスを入力">
@@ -36,7 +37,7 @@
         <label>パスワード:   </label>
             <input type="password" id="password" name="パスワード" placeholder="パスワードを入力"   minlength="8" required>
     </div> -->
-
+<!-- 
 <div class="main-wrap">
     <div class="input-wrap">
         <label>ユーザーID<input id="search-id" type="text"></label>
@@ -50,14 +51,14 @@
         <button>ログイン</button>
     </div>
     <p id="search-result"></p>
-</div>
+</div> -->
 
 
 
 <div class="footer">
 
     <div class="registration">
-        <button onclick="location.href='registration'">新規登録</button>
+        <button onclick="location.href='registration'">ユーザー新規登録</button>
     </div>
 </div>
 
