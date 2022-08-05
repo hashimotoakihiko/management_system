@@ -104,9 +104,9 @@
 </script> -->
 
 <div class="footer">
-  <div class="registration">
+  <!-- <div class="registration">
     <a href="http://localhost:8888/login">登録</a>
-  </div>
+  </div> -->
   
   <div class="return">
             <button onclick="location.href='login'">トップページへ戻る</button>

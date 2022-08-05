@@ -52,6 +52,8 @@ input[type=submit]{
 	background-color:#525252;
 	color:#FFF;
 	font-weight:bold;
-	display:block;
+	/* display:block; */
 	padding:3px 15px;
+  
+  
 }
