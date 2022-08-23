@@ -31,12 +31,6 @@ class UserController extends Controller
         return view ('registration');
     }
 
-   
-
-    // public function login(LoginFormRequest $request) 
-    // {
-    //     dd($request->all());
-    // }
 
     
 }

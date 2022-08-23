@@ -23,8 +23,9 @@ Route::get('/',
 Route::get('/login', [UserController::class,'showLogin'])->name
 ('showLogin');
 
-Route::get('/product_list', [CompanieController::class,'showList'])->name
-('showlist');
+
+// Route::get('/product_list', [CompanieController::class,'showList'])->name
+// ('showlist');
 
 Route::post('/product_list', [CompanieController::class,'showList'])->name
 ('showList');
@@ -34,6 +35,10 @@ Route::get('/registration', [UserController::class,'new'])->name
 
 Route::post('/registration', [UserController::class,'new'])->name
 ('new');
+
+Route::get('/product_list', [CompanieController::class,'search'])->name
+('search');
+
 
 Route::get('/product_new', [ProductController::class,'product_new'])->name
 ('product_new');
@@ -52,3 +57,21 @@ Route::get('/product_edit', [ProductController::class,'product_edit'])->name
 
 Route::post('/product_edit', [ProductController::class,'product_edit'])->name
 ('product_edit');
+
+
+
+Route::get('/product_list', [ProductController::class,'productshowList'])->name
+('productshowList');
+
+Route::post('/product_list', [ProductController::class,'productshowList'])->name
+('productshowList');
+
+Route::get('/product_list', [ProductController::class,'productsearch'])->name
+('productsearch');
+
+
+
+
+
+
+

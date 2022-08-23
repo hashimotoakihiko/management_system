@@ -25,11 +25,15 @@ input[type=submit]{
     background-color:#525252;
     color:#FFF;
     font-weight:bold;
-    display:block;
+    /* display:block; */
     /* padding:3px 20px; */
     /* display:inline-block;  */
     /* margin: auto; */
             
+}
+
+select[type=text]{
+    width:300px;
 }
 
 input[type=text]{
@@ -42,50 +46,55 @@ input[type=text]{
 	margin: auto; 
 }
 
-        label{
-            width:420px;
-            height: 30px;
-            background-color: green;
-            /* margin: auto; */
-        }
+label{
+    width:420px;
+    height: 30px;
+    background-color: green;
+    /* margin: auto; */
+}
 
-        .product_search{
-            width: 420px;
-            height: 200px;
-        }
+.product_search{
+    width: 420px;
+    /* height: 200px; */
+}
 
-        .new_registration{
-            height: 50px;
-            /* padding-top: 30px; */
-            text-align:center;
-            margin-top:20px;
-        }
+.product_name{
+    /* margin: auto; */
+    height: 50px;
+}
 
-        .product_name{
-            /* margin: auto; */
-            height: 50px;
-        }
+.company_name{
+    /* margin: auto; */
+    height: 50px;
+}
 
-        .company_name{
-            /* margin: auto; */
-            height: 50px;
-        }
+table{
+    height: 50px;
+}
 
-        .product_list{
-            width: 400px;
-            text-align: center;
-            line-height:2;
-            height: 350px;
-            margin: auto;
-        }
+.new_registration{
+    height: 50px;
+    text-align:center;
+    margin-top:20px;
+}
 
-        .product_information_image{
-            width: 100px;
-            height: 100px;
-            text-align: center;
-            line-height:2;
-            margin: auto;
-        }
+
+
+.product_list{
+    width: 400px;
+    text-align: center;
+    line-height:2;
+    height: 350px;
+    margin: auto;
+}
+
+.product_information_image{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height:2;
+    margin: auto;
+}
 
 .footer{
     width:420px;
