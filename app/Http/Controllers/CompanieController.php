@@ -19,11 +19,29 @@ class CompanieController extends Controller
     {
         $companies = Companie::all();
 
+       // dd($companies);
+
+        return view ('product_list',
+        ['companies' => $companies]);
+
+      
+    }
+
+    public function search()
+    {
+        $companies = Companie::all();
+        // $data = ['msg' => '商品一覧', 'companies' => $companies];
+
         //dd($companies);
+
+        // return view('product_list', $data);
 
         return view ('product_list',
         ['companies' => $companies]);
     }
+    
+
+    
 
     
 
