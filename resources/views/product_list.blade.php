@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link rel='stylesheet' href='./css/puroduct_list.css'>
+    <link rel='stylesheet' href='./css/product_list.css'>
     <meta charset="UTF-8">
-    <title>会員登録</title>
+    <title>検索機能</title>
     <style>
     </style> 
 </head>
@@ -14,67 +14,66 @@
 	<h1>vending machine</h1>
 </div>
 
+
 <div class="content">
     <h2>商品情報一覧</h2>
 
-    <form method="post" action="{{ route('productsearch') }}">
+     <!-- 検索機能ここから -->
+
+     <form action="{{ route('crud.index') }}" method="GET">
     @csrf
-        <div class="product_search">
-            <div class="product_name">
-                <label>商品名:  </label>
-                <input type="text" class="product_name" name="product_name" value="{{ $products->product_name }}">
-                @foreach($products as $product)
-                {{ $products->product_name }} 
-                @endforeach
-                <input type="submit" name="search" value="検索">  
-            </div>  
+    <input type="text" name="keyword">
+    <input type="submit" value="検索">
+    </form>
 
+    <!-- 新規作成ボタン -->
+    <button style="margin-top:50px; margin-bottom:20px;" class="btn btn-primary" type=“button” onclick="location.href='/create'">新規作成</button>
 
+    <!--テーブル-->
+    <div class="table-responsive">
+        <table class="table" style="width: 1000px; max-width: 0 auto;">
+            <tr class="table-info">
+            <th scope="col" >id</th>
+                <th scope="col" >商品画像</th>
+                <th scope="col" >商品名</th>
+                <th scope="col" >価格</th>
+                <th scope="col" >在庫数</th>
+                <th scope="col" >メーカー名</th>
+                <th scope="col" >詳細表示</th>
+                <th scope="col" >削除</th>
+            </tr>
+            
+            <!--レコードの繰り返し処理--> 
+            @foreach($products as $product)
+            <tr>
+                <td>{{$product->id}}</td>
+                <td><img style="width:80px;" ></td>
+                <td>{{$product->product_name}}</td>
+                <td>{{$product->price}}</td>
+                <td>{{$product->stock}}</td>
+                <td>{{$product->company_name}}</td>
+                <td><a href="/show/{{$product->id}}"><button type="button" class="btn btn-success">詳細</button></a></td>
 
+                <td>
+                <form  class="id">
+                    <input data-user_id="{{$product->id}}" type="submit" class="btn btn-danger btn-dell" value="削除">
+                </form>
+                </td>
+            </tr>
+            @endforeach
 
-            <div class="company_name">
+            
+        </table>
+    </div>
 
-            </div>   
-
-                    <!-- 頭文字3桁での検索可能(部分一致) -->
-                    <!-- companiesテーブルに登録されている企業から選択できるようにする -->
-                    <!-- リダイレクトの記述(結果表示) -->
-        </div>
+   
 </div>
-
+<!-- 頭文字3桁での検索可能(部分一致) -->
+<!-- companiesテーブルに登録されている企業から選択できるようにする -->
+<!-- リダイレクトの記述(結果表示) -->
     
-
 <div class="footer">
-    <div class="product_list">
-        <div class="product_id">
-            <label>商品id:</label><br>
-            <input type="text" name="id" value= "{{ $products->id }} ">
-            
-        </div>
-        
-        <div class="product_name">
-            <label>商品名: </label><br>
-            <input type="text" name="product_name" value= "{{ $products->product_name }}"> 
-            
-        </div>
-        
-        <div class="price">
-            <label>価 格: </label><br>
-            <input type="text" name="price" value= "{{ $products->price }}">
-            
-        </div>
-        
-        <div class="stock">
-            <label>在庫数: </label><br>
-            <input type="text" name="stock" value= "{{ $products->stock }}">
-            
-        </div>
-
-        
-    </div> 
-    </form>   
-
-    <div clkass="conpany_name">
+    <!-- <div class="conpany_name">
         <div class="company_name">
             <label>メーカー名:
                 <select name="company_name">
@@ -85,37 +84,18 @@
                 </select>
             </label><br>
         </div>
-    </div>
+    </div> -->
     
     <div class="new_registration">
-            <form method="post" action="{{ route('product_new') }}">
-            @csrf
-                <!-- <input type="submit" value="新規登録"> 
-                <a href="http://localhost:8888/product_new">商品新規登録</a> -->
-                <button onclick="location.href='product_new'">商品新規登録</button>
-            </form>
-    </div>
-
-    <div class="product_information_image">
-        <img src="例：image.png******" alt="例：海の写真" title="例：空と海">
+        <button onclick="location.href='product_new'">商品新規登録</button>
     </div>
 
     <div class="product_details">
-        <!-- <input type="submit" 
-                formaction="(product_details.php)" 
-                name="product_details" 
-                value="詳細表示"> -->
-                <!-- <a href="http://localhost:8888/">詳細表示</a> -->
-                <button onclick="location.href='product_details'">詳細表示</button>    
+        <button onclick="location.href='product_details'">詳細表示</button>    
     </div>
     
     <div class="product_deletion">
-        <!-- <input type="submit"
-                formaction="(******)" 
-                name="product_deletion"
-                value="削除"> -->
-                <!-- <a href="http://localhost:8888/">削除</a> -->
-                <button onclick="location.href='product_details'">削除</button>
+        <button onclick="location.href='product_details'">削除</button>
     </div>
     <!-- 削除処理実行前にダイアログにて確認を行う -->
 
