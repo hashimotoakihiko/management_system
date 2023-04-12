@@ -56,16 +56,14 @@
 
                 <td>
                 <form  class="id">
+                @csrf
                     <input data-user_id="{{$product->id}}" type="submit" class="btn btn-danger btn-dell" value="削除">
                 </form>
                 </td>
             </tr>
             @endforeach
-
-            
         </table>
     </div>
-
    
 </div>
 <!-- 頭文字3桁での検索可能(部分一致) -->

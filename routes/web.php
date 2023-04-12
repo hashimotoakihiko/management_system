@@ -69,21 +69,6 @@ Route::get('/index', [ProductController::class,'index'])->name
 ('index');
 Route::get('/', [ProductController::class,'index'])->name
 ('crud.index'); 
-/* 一覧表示 */
-
-// //本の一覧を表示するページ
-// Route::get('/index', [ProductController::class,'product.index'])->name
-// ('product.index');
-// //本の情報を作成するページの表示
-// Route::get('/create', [ProductController::class,'product.create'])->name
-// ('product.create');
-// //本の情報を保存
-// Route::post('/store', [ProductController::class,'product.store'])->name
-// ('product.store');
-// //本の中身を表示するページ
-// Route::post('/show/{product}', [ProductController::class,'product.show'])->name
-// ('product.show');
-
 
 
 
