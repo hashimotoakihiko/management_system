@@ -72,7 +72,14 @@
             <button onclick="location.href='product_details'">戻る</button>
         </div>
     </div>
-
+    
+    <form action="{{ route('search') }}" method="get">
+        @csrf
+            <div class="company_name">
+                <label>メーカー名: </label><br>
+                <input type="text" name="company_name" value= "{{$companies->conpany_name}}">
+            </div>
+    </form>
 
 
 </body>
