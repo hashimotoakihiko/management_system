@@ -32,6 +32,8 @@ Route::get('/product_list', [ProductController::class,'productshowList'])->name
 Route::post('/product_list', [ProductController::class,'productshowList'])->name
 ('productshowList');
 
+
+
 //新規ユーザー登録画面表示
 Route::get('/registration', [UserController::class,'new'])->name
 ('new');
@@ -69,6 +71,11 @@ Route::get('/index', [ProductController::class,'index'])->name
 ('index');
 Route::get('/', [ProductController::class,'index'])->name
 ('crud.index'); 
+
+
+// Route::get('/dashboard', [CompanieController::class, 'indexC'])
+//      ->middleware(['auth'])
+//      ->name('dashboard');
 
 
 

@@ -57,32 +57,21 @@
                 <td>
                 <form  class="id">
                 @csrf
-                    <input data-user_id="{{$product->id}}" type="submit" class="btn btn-danger btn-dell" value="削除">
+                    <input data-user_id="{{$product->id}}" type="button" class="btn btn-danger btn-dell" value="削除">
                 </form>
                 </td>
             </tr>
             @endforeach
         </table>
     </div>
-   
+
+    
 </div>
 <!-- 頭文字3桁での検索可能(部分一致) -->
 <!-- companiesテーブルに登録されている企業から選択できるようにする -->
 <!-- リダイレクトの記述(結果表示) -->
     
 <div class="footer">
-    <!-- <div class="conpany_name">
-        <div class="company_name">
-            <label>メーカー名:
-                <select name="company_name">
-                    <option value="1">サントリー</option>
-                    <option value="2">コカ・コーラ</option>
-                    <option value="3">伊藤園</option>
-                    <option selected="4">アサヒ</option>
-                </select>
-            </label><br>
-        </div>
-    </div> -->
     
     <div class="new_registration">
         <button onclick="location.href='product_new'">商品新規登録</button>

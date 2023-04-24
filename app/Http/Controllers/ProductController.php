@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Requests\ProductRequest;
-// use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\View;
+
 
 class ProductController extends Controller
 {
@@ -14,7 +15,7 @@ class ProductController extends Controller
      * 
      * @return view
      */
-
+    
     public function product_new()
     {
         return view ('product_new');
@@ -30,18 +31,18 @@ class ProductController extends Controller
         return view ('product_edit');
     }
 
-    public function productshowList()
-    {
-        // $products = Product::all();
-        // $products = Product::where('id',1)->first();
-        // $products = Product::find(1);
-        $products = Product::get();
+    
 
-    //    dd($products);
+    public function productshowList()
+    {   
+        $this->Product = new Product();
+
+        $products = $this->Product->getList();
+        // $products = Product::get();
+        // dd($products);
 
         return view ('product_list',
         ['products' => $products]);
-      
     }
     
 
@@ -52,17 +53,14 @@ class ProductController extends Controller
         $products = Product::query();
         // dd($products);
 
-
         /* キーワードから検索処理 */
         $keyword = $request->input('keyword');
-        if(!empty($keyword)) {//$keyword　が空ではない場合、検索処理を実行します
+        if(!empty($keyword)) {//$keywordが空ではない場合、検索処理を実行します
             // $products->where('company_id', 'LIKE', "%{$keyword}%")
             // ->orwhereHas('products', function ($query) use ($keyword) {
             //     $query->where('product_name', 'LIKE', "%{$keyword}%");
             // })->get();
             $products->where('product_name', 'LIKE', "%{$keyword}%")->get();
-            
-
         }
 
         /* ページネーション */
@@ -135,6 +133,16 @@ class ProductController extends Controller
     //     // 全件取得 +ページネーション
     //     $students = $query->orderBy('id','desc')->paginate(5);
     //     return view('student.list')->with('students',$students)->with('keyword',$products);
+    // }
+
+    // public function index2() {
+    //     // 主→ 従
+	// 	$companie_A = Companie::find(1)->products->toArray();
+
+    //     // 主← 従
+    //     $product = Product::find(2)->companie->name;
+
+    //     dd($companie_A, $product);
     // }
     
 }

@@ -39,7 +39,12 @@ class CompanieController extends Controller
     //     ['companies' => $companies]);
     // }
     
-
+    // public function indexC()
+    // {
+    //     $companies = Companie::find(auth()->id());
+    //     $companies->products = $companies->products()->orderByDesc('created_at')->paginate(5);
+    //     return view('dashboard', ['companies' => $companies]);
+    // }
     
 
     
