@@ -21,14 +21,4 @@ class Companie extends Model
         'street_address'
     ];
 
-    // public function products() {
-    //     return $this->belongsTo('App\Models\Product');
-    // }
-    
-    // public function products() {
-    //     // return $this->hasMany(Product::class,another_id);
-    //     return $this->hasMany(Product::class);
-
-    // }
-
 }

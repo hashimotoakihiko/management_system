@@ -56,25 +56,9 @@ class Product extends Model
          ->get();
          // dd($products);
          return $products;
+         
       }
 }
-
-
-      // public function companies() {
-      //       return $this->hasMany('App\Models\Companie');
-      // }
-
-      // public function companies() {
-      //    return $this->belongsTo(Companie::class,another_id);
-      //    return $this->belongsTo(Companie::class);
-      //    $companies = Companie::find(1);
-      //    $companies->products; //これでuserがもつpostsが全部取得できる
-
-      //    foreach($companie->products as $product){
-      //    $product->content;
-      //    }
-      // }
-
 
         
         

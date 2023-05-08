@@ -54,23 +54,31 @@
                 <td>{{$product->company_name}}</td>
                 <td><a href="/show/{{$product->id}}"><button type="button" class="btn btn-success">詳細</button></a></td>
 
-                <td>
+                <!-- <td>
                 <form  class="id">
                 @csrf
                     <input data-user_id="{{$product->id}}" type="button" class="btn btn-danger btn-dell" value="削除">
                 </form>
+                </td> -->
+                <td>
+                    <form action="{{ route('products.destroy', ['id'=>$product->id]) }}" method="POST" onclick="return confirm('本当に削除しますか？');">
+                    @csrf
+                        <button type="submit" class="btn btn-danger" onClick="delete_alert(event);return false;">削除</button>
+                    </form>
                 </td>
             </tr>
             @endforeach
-        </table>
-    </div>
+            <div>
+            <!-- // 下記のようにページネーターを記述するとページネートで次ページに遷移しても、検索結果を保持する -->
 
-    
+            </div>
+        </table>
+    </div>    
 </div>
 <!-- 頭文字3桁での検索可能(部分一致) -->
 <!-- companiesテーブルに登録されている企業から選択できるようにする -->
 <!-- リダイレクトの記述(結果表示) -->
-    
+
 <div class="footer">
     
     <div class="new_registration">

@@ -65,20 +65,17 @@ Route::post('/product_edit', [ProductController::class,'product_edit'])->name
 ('product_edit');
 
 //商品検索
-Route::get('/', [ProductController::class, 'index'])->name
-('products.index');
-Route::get('/index', [ProductController::class,'index'])->name
-('index');
+// Route::get('/', [ProductController::class, 'index'])->name
+// ('products.index');
+// Route::get('/index', [ProductController::class,'index'])->name
+// ('index');
+
 Route::get('/', [ProductController::class,'index'])->name
 ('crud.index'); 
 
 
-// Route::get('/dashboard', [CompanieController::class, 'indexC'])
-//      ->middleware(['auth'])
-//      ->name('dashboard');
-
-
-
-
+//商品削除
+Route::post('/destroy{id}', [ProductController::class, 'destroy'])->name
+('products.destroy');
 
 

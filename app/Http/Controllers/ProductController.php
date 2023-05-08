@@ -31,27 +31,22 @@ class ProductController extends Controller
         return view ('product_edit');
     }
 
-    
-
     public function productshowList()
     {   
         $this->Product = new Product();
 
         $products = $this->Product->getList();
         // $products = Product::get();
-        // dd($products);
 
         return view ('product_list',
         ['products' => $products]);
     }
     
-
     public function index(Request $request)
     {
 
          /* テーブルから全てのレコードを取得する */
         $products = Product::query();
-        // dd($products);
 
         /* キーワードから検索処理 */
         $keyword = $request->input('keyword');
@@ -71,78 +66,21 @@ class ProductController extends Controller
     }
 
 
-    
-    // public function index(Request $request)
-    // {
-    //     $keyword = $request->input('keyword');
+    /**
+     * 削除処理
+     */
+    public function destroy($id)
+    {
+        // Booksテーブルから指定のIDのレコード1件を取得
+        $products = Product::find($id);
+        // レコードを削除
+        $products->delete();
+        // dd($products);
 
-    //     $query = Product::query();
-
-    //     if(!empty($keyword)) {
-    //         $query->where('id', 'LIKE', "%{$keyword}%")
-    //             ->orWhere('product_name', 'LIKE', "%{$keyword}%");
-    //     }
-
-    //     $products = $query->get();
-
-    //     return view('product.index', compact('products', 'keyword'));
-    // }
-
-    // public function create()
-    // {
-    //     return view('product.create');
-    // }
-
-    // public function store(Request $request)
-    // {
-    //     $product = new Product();
-    //     $product->id = $request->id;
-    //     $product->company_id = $request->company_id;
-    //     $product->product_name = $request->product_name;
-    //     $product->price = $request->price;
-    //     $product->stock = $request->stock;
-    //     $product->comment = $request->comment;
-    //     $products->save();
-    //     return back();
-    // }
-
-    // //ここまで追加
-    // public function show(Product $product)
-    // {
-    //     return view('product.show',compact('product'));
-    // }
-
-
-
-
-    // public function getIndex(Request $rq)
-    // {
-    //     //キーワード受け取り
-    //     $products = $rq->input('keyword');
-    
-    //     //クエリ生成
-    //     $query = \App\Product::query();
-    
-    //     //もしキーワードがあったら
-    //     if(!empty($products))
-    //     {
-    //         $query->where('email','like','%'.$products.'%');
-    //         $query->orWhere('name','like','%'.$products.'%');
-    //     }
-    
-    //     // 全件取得 +ページネーション
-    //     $students = $query->orderBy('id','desc')->paginate(5);
-    //     return view('student.list')->with('students',$students)->with('keyword',$products);
-    // }
-
-    // public function index2() {
-    //     // 主→ 従
-	// 	$companie_A = Companie::find(1)->products->toArray();
-
-    //     // 主← 従
-    //     $product = Product::find(2)->companie->name;
-
-    //     dd($companie_A, $product);
-    // }
-    
+        // 削除したら一覧画面にリダイレクト
+        // return redirect()->route('product_list', ['products' => $products]);
+        return redirect()->to('product_list');
+    }
 }
+
+    
