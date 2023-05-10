@@ -21,15 +21,12 @@ class ProductController extends Controller
         return view ('product_new');
     }
 
-    public function product_details()
-    {
-        return view ('product_details');
-    }
 
     public function product_edit()
     {
         return view ('product_edit');
     }
+
 
     public function productshowList()
     {   
@@ -42,6 +39,7 @@ class ProductController extends Controller
         ['products' => $products]);
     }
     
+
     public function index(Request $request)
     {
 
@@ -64,6 +62,41 @@ class ProductController extends Controller
         return view('product_list', ['products' => $products]);
 
     }
+
+
+    public function product_details()
+    {
+        $this->Product = new Product();
+
+        $products = $this->Product->getDetail();
+        // $products = Product::get();
+        
+        return view ('product_details',
+        ['products' => $products]);
+    }
+
+    // public function getDetail(Request $request)
+    // {
+
+    //      /* テーブルから全てのレコードを取得する */
+    //     $products = Product::query();
+
+    //     /* キーワードから検索処理 */
+    //     $keyword = $request->input('keyword');
+    //     if(!empty($keyword)) {//$keywordが空ではない場合、検索処理を実行します
+    //         // $products->where('company_id', 'LIKE', "%{$keyword}%")
+    //         // ->orwhereHas('products', function ($query) use ($keyword) {
+    //         //     $query->where('product_name', 'LIKE', "%{$keyword}%");
+    //         // })->get();
+    //         $products->where('product_name', 'LIKE', "%{$keyword}%")->get();
+    //     }
+
+    //     /* ページネーション */
+    //     $products = $products->paginate(5);
+
+    //     return view('product_details', ['products' => $products]);
+
+    // }
 
 
     /**

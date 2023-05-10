@@ -24,11 +24,20 @@
     @csrf
     <input type="text" name="keyword">
     <input type="submit" value="検索">
+    <!--  カテゴリープルダウン -->
+    <!-- <div class="form-group">
+        <label for="category-id">{{ __('カテゴリー') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label> -->
+        <select class="form-control" id="category-id" name="category_id">
+            @foreach ($products as $product)
+                <option value="{{ $product->id }}">{{ $product->company_name }}</option>
+            @endforeach
+        </select>
+      <!-- </div> -->
     </form>
 
     <!-- 新規作成ボタン -->
-    <button style="margin-top:50px; margin-bottom:20px;" class="btn btn-primary" type=“button” onclick="location.href='/create'">新規作成</button>
-
+    <!-- <button style="margin-top:50px; margin-bottom:20px;" class="btn btn-primary" type=“button” onclick="location.href='/create'">新規作成</button> -->
+   
     <!--テーブル-->
     <div class="table-responsive">
         <table class="table" style="width: 1000px; max-width: 0 auto;">
@@ -39,8 +48,8 @@
                 <th scope="col" >価格</th>
                 <th scope="col" >在庫数</th>
                 <th scope="col" >メーカー名</th>
-                <th scope="col" >詳細表示</th>
-                <th scope="col" >削除</th>
+                <!-- <th scope="col" >詳細表示</th>
+                <th scope="col" >削除</th> -->
             </tr>
             
             <!--レコードの繰り返し処理--> 
@@ -51,8 +60,14 @@
                 <td>{{$product->product_name}}</td>
                 <td>{{$product->price}}</td>
                 <td>{{$product->stock}}</td>
-                <td>{{$product->company_name}}</td>
-                <td><a href="/show/{{$product->id}}"><button type="button" class="btn btn-success">詳細</button></a></td>
+                <td>{{$product->company_name}}
+                    <!-- <select name="age">
+                        <option value="20" selected>20歳</option>
+                        <option value="30">30歳</option>
+                    </select> -->
+                </td>
+                
+                <!-- <td><a href="/show/{{$product->id}}"><button type="button" class="btn btn-success">詳細</button></a></td> -->
 
                 <!-- <td>
                 <form  class="id">
@@ -68,6 +83,7 @@
                 </td>
             </tr>
             @endforeach
+            
             <div>
             <!-- // 下記のようにページネーターを記述するとページネートで次ページに遷移しても、検索結果を保持する -->
 

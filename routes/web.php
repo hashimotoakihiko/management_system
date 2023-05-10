@@ -18,9 +18,9 @@ use App\Http\Controllers\ProductController;
 */
 
 //ログイン画面表示
-Route::get('/', 
-'UserController@showLogin')->name
-('users');
+// Route::get('/', 
+// 'UserController@showLogin')->name
+// ('users');
 
 Route::get('/login', [UserController::class,'showLogin'])->name
 ('showLogin');
@@ -38,41 +38,42 @@ Route::post('/product_list', [ProductController::class,'productshowList'])->name
 Route::get('/registration', [UserController::class,'new'])->name
 ('new');
 
-Route::post('/registration', [UserController::class,'new'])->name
-('new');
+// Route::post('/registration', [UserController::class,'new'])->name
+// ('new');
 
 //商品新規登録表示
 Route::get('/product_new', [ProductController::class,'product_new'])->name
 ('product_new');
 
-Route::post('/product_new', [ProductController::class,'product_new'])->name
-('product_new');
+// Route::post('/product_new', [ProductController::class,'product_new'])->name
+// ('product_new');
 
 
 //商品詳細表示
 Route::get('/product_details', [ProductController::class,'product_details'])->name
 ('product_details');
 
-Route::post('/product_details', [ProductController::class,'product_details'])->name
-('product_details');
+// Route::post('/product_details', [ProductController::class,'product_details'])->name
+// ('product_details');
 
 
 //商品編集表示
 Route::get('/product_edit', [ProductController::class,'product_edit'])->name
 ('product_edit');
 
-Route::post('/product_edit', [ProductController::class,'product_edit'])->name
-('product_edit');
+// Route::post('/product_edit', [ProductController::class,'product_edit'])->name
+// ('product_edit');
 
 //商品検索
 // Route::get('/', [ProductController::class, 'index'])->name
 // ('products.index');
 // Route::get('/index', [ProductController::class,'index'])->name
 // ('index');
-
 Route::get('/', [ProductController::class,'index'])->name
 ('crud.index'); 
 
+// Route::get('/', [ProductController::class,'getDetail'])->name
+// ('drud.index'); 
 
 //商品削除
 Route::post('/destroy{id}', [ProductController::class, 'destroy'])->name
