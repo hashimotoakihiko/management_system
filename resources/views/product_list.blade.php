@@ -13,8 +13,6 @@
 <div class="header">
 	<h1>vending machine</h1>
 </div>
-
-
 <div class="content">
     <h2>商品情報一覧</h2>
 
@@ -48,8 +46,9 @@
                 <th scope="col" >価格</th>
                 <th scope="col" >在庫数</th>
                 <th scope="col" >メーカー名</th>
-                <!-- <th scope="col" >詳細表示</th>
-                <th scope="col" >削除</th> -->
+                <th scope="col" >コメント</th>
+                <th scope="col" >詳細表示</th>
+                <th scope="col" >削除</th>
             </tr>
             
             <!--レコードの繰り返し処理--> 
@@ -61,14 +60,18 @@
                 <td>{{$product->price}}</td>
                 <td>{{$product->stock}}</td>
                 <td>{{$product->company_name}}
+                <td>{{$product->comment}}
                     <!-- <select name="age">
                         <option value="20" selected>20歳</option>
                         <option value="30">30歳</option>
                     </select> -->
                 </td>
+                <td><button><a href="{{ route('products.show', ['id'=>$product->id]) }}" class="btn btn-primary">詳細</a></button></td>
+                <!-- <td><a href="{{ route('products.edit', ['id'=>$product->id]) }}" class="btn btn-info">編集</a></td> -->
+                <!-- <td><a href="{{ route('products.show', ['id'=>$product->id]) }}" class="btn btn-primary">詳細</a></td> -->
+               
                 
-                <!-- <td><a href="/show/{{$product->id}}"><button type="button" class="btn btn-success">詳細</button></a></td> -->
-
+                <!-- <td><button type="button" class="btn btn-success">詳細</button></td> -->
                 <!-- <td>
                 <form  class="id">
                 @csrf
@@ -91,6 +94,7 @@
         </table>
     </div>    
 </div>
+
 <!-- 頭文字3桁での検索可能(部分一致) -->
 <!-- companiesテーブルに登録されている企業から選択できるようにする -->
 <!-- リダイレクトの記述(結果表示) -->
@@ -98,16 +102,17 @@
 <div class="footer">
     
     <div class="new_registration">
-        <button onclick="location.href='product_new'">商品新規登録</button>
+        <!-- <button onclick="location.href='product_new'">商品新規登録</button> -->
+        <button><a href="{{ route('products.create') }}">商品新規登録</a></button>
     </div>
 
-    <div class="product_details">
+    <!-- <div class="product_details">
         <button onclick="location.href='product_details'">詳細表示</button>    
-    </div>
+    </div> -->
     
-    <div class="product_deletion">
+    <!-- <div class="product_deletion">
         <button onclick="location.href='product_details'">削除</button>
-    </div>
+    </div> -->
     <!-- 削除処理実行前にダイアログにて確認を行う -->
 
     <div class="return">
