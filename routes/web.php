@@ -18,9 +18,9 @@ use App\Http\Controllers\ProductController;
 */
 
 //ログイン画面表示
-Route::get('/', 
-'UserController@showLogin')->name
-('users');
+// Route::get('/', 
+// 'UserController@showLogin')->name
+// ('users');
 
 Route::get('/login', [UserController::class,'showLogin'])->name
 ('showLogin');
@@ -32,46 +32,37 @@ Route::get('/product_list', [ProductController::class,'productshowList'])->name
 Route::post('/product_list', [ProductController::class,'productshowList'])->name
 ('productshowList');
 
+
 //新規ユーザー登録画面表示
 Route::get('/registration', [UserController::class,'new'])->name
 ('new');
 
-Route::post('/registration', [UserController::class,'new'])->name
-('new');
 
 //商品新規登録表示
-Route::get('/product_new', [ProductController::class,'product_new'])->name
-('product_new');
+Route::get('/create', [ProductController::class, 'create'])->name
+('products.create');
 
-Route::post('/product_new', [ProductController::class,'product_new'])->name
-('product_new');
+// 商品の登録処理
+Route::post('/store', [ProductController::class, 'store'])->name
+('products.store');
 
 
 //商品詳細表示
-Route::get('/product_details', [ProductController::class,'product_details'])->name
-('product_details');
-
-Route::post('/product_details', [ProductController::class,'product_details'])->name
-('product_details');
-
-
-//商品編集表示
-Route::get('/product_edit', [ProductController::class,'product_edit'])->name
-('product_edit');
-
-Route::post('/product_edit', [ProductController::class,'product_edit'])->name
-('product_edit');
+Route::get('/show/{id}', [ProductController::class, 'show'])->name
+('products.show');
 
 //商品検索
-Route::get('/', [ProductController::class, 'index'])->name
-('products.index');
-Route::get('/index', [ProductController::class,'index'])->name
-('index');
 Route::get('/', [ProductController::class,'index'])->name
-('crud.index'); 
+('crud.index');
 
+//商品編集
+Route::get('/edit/{id}', [ProductController::class, 'edit'])->name
+('products.edit');
 
+// 商品の更新処理
+Route::post('/update/{id}', [ProductController::class, 'update'])->name
+('products.update');
 
-
-
-
+//商品削除
+Route::post('/destroy{id}', [ProductController::class, 'destroy'])->name
+('products.destroy');
