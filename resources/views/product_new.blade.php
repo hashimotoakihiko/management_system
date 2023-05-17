@@ -21,7 +21,9 @@
     <form action="{{ route('products.store') }}" method="POST">
     @csrf
         <fieldset>
-            <div class="form-group">
+        <div class="form-group">
+                <label for="product_name">{{ __('商品の名称') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
+                <input type="text" class="form-control" name="product_name" id="product_name">
                 <label for="id">{{ __('ID') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
                 <input type="text" class="form-control" name="id" id="id">
                 <label for="company_id">{{ __('会社ID') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
@@ -32,8 +34,6 @@
                 <input type="text" class="form-control" name="stock" id="stock">
                 <label for="comment">{{ __('コメント') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
                 <input type="text" class="form-control" name="comment" id="comment">
-                <label for="product_name">{{ __('商品の名称') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
-                <input type="text" class="form-control" name="book_name" id="book_name">
             </div>
 
             <div class="d-flex justify-content-between pt-3">

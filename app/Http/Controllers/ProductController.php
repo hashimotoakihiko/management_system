@@ -16,6 +16,11 @@ class ProductController extends Controller
      * @return view
      */
 
+     public function __construct()
+    {
+        $this->product = new Product();
+    }
+
     public function productshowList()
     { 
         $this->Product = new Product();
@@ -27,11 +32,7 @@ class ProductController extends Controller
         ['products' => $products]);
     }
     
-    public function __construct()
-    {
-        $this->product = new Product();
-    }
-
+    
     // public function productshowList()
     // {
     //     $products = $this->product->findAllProducts();
@@ -62,13 +63,6 @@ class ProductController extends Controller
 
     }
 
-    // public function __construct()
-    // {
-    //     // $this->products = new Products();
-    //     $this->product = new Product();
-    //     // $products = $this->Product->getList();
-    // }
-
     /**
      * 登録画面
      */
@@ -84,7 +78,8 @@ class ProductController extends Controller
     {
         // $this->products = new Products();
         $registerProducts = $this->product->InsertProduct($request);
-        return redirect()->route('product_list');
+        
+        return redirect()->route('productshowList');
         // return redirect()->to('product_list');
 
     }
@@ -116,7 +111,6 @@ class ProductController extends Controller
     {
         $products = Product::find($id);
         $updateProducts = $this->product->updateProduct($request, $products);
-
         return redirect()->route('productshowList');
     }
 
@@ -146,7 +140,6 @@ class ProductController extends Controller
         $products = Product::find($id);
         // レコードを削除
         $products->delete();
-        // dd($products);
 
         // 削除したら一覧画面にリダイレクト
         // return redirect()->route('product_list', ['products' => $products]);

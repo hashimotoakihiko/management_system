@@ -38,7 +38,7 @@
    
     <!--テーブル-->
     <div class="table-responsive">
-        <table class="table" style="width: 1000px; max-width: 0 auto;">
+        <table class="table" style="width: 2000px; max-width: 0 auto;">
             <tr class="table-info">
             <th scope="col" >id</th>
                 <th scope="col" >商品画像</th>

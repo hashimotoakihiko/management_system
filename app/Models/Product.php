@@ -29,9 +29,6 @@ class Product extends Model
       {
          // productsテーブルの全てのレコードを取得します
          // モデル名は命名のルールとして頭文字が大文字になっています
-         
-         
-         
          // viewのファイルまでのパスは以下の設定です
          // プロジェクト¥resources¥views¥user¥index.blade.php
          // return view の引数にはビューが格納されているフォルダ名と
@@ -56,14 +53,16 @@ class Product extends Model
          ->get();
       //    dd($products);
          return $products;
-         
       }
 
       /**
      * 一覧画面表示用にテーブルから全てのデータを取得
      */
+
       Public function findAllProducts()
       {
+            dd($products);
+
             return Product::all();
       }
 
@@ -76,45 +75,44 @@ class Product extends Model
             return $this->create([
                   'product_name' => $request->product_name,
                   'id'           => $request->id,
-                  'company_id'   => $request->id,
+                  'company_id'   => $request->company_id,
                   'price'        => $request->price,
                   'stock'        => $request->stock,
                   'comment'      => $request->comment
-            ]);
+            ])
             // ->sortable()
-            // ->from('products')
-            // ->leftJoin('companies', 'products.company_id', 'companies.id')
-            // ->get();
-            //    dd($products);
-            // return $products;
+            ->from('products')
+            ->leftJoin('companies', 'products.company_id', 'companies.id')
+            ->get();
+            dd($products);
+            return $products;
+            
+           
       }
 
       /**
      * 更新処理
      */
-    public function updateProduct($request, $product)
-    {
-        $result = $product->fill([
+      public function updateProduct($request, $product)
+      {
+            $result = $product->fill([
             'product_name' => $request->product_name,
             'id'           => $request->id,
-            'company_id'   => $request->id,
+            'company_id'   => $request->company_id,
             'price'        => $request->price,
             'stock'        => $request->stock,
             'comment'      => $request->comment
-        ])->save();
+            ])->save();
 
-        return $result;
-    }
-            // dd($products);
+            return $result;
+      }
+            
       
 
       // Public function getDetail()
       // {
       //    // productsテーブルの全てのレコードを取得します
       //    // モデル名は命名のルールとして頭文字が大文字になっています
-         
-         
-         
       //    // viewのファイルまでのパスは以下の設定です
       //    // プロジェクト¥resources¥views¥user¥index.blade.php
       //    // return view の引数にはビューが格納されているフォルダ名と
