@@ -16,7 +16,7 @@
 
 
 <div class="content">
-  <h2>新規ユーザー</h2>
+  <h2>新規ユーザー登録</h2>
 
     <div class="name">
       <label>ユーザー名:</label>
@@ -46,7 +46,7 @@
   </form>
 
   <script language="JavaScript" type="text/javascript">
-<!--
+
   function CheckEmail() {
     //IE対応の為変更
     //var mail = email_1.value; //メールフォームの値を取得

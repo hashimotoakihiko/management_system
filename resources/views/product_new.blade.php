@@ -24,6 +24,8 @@
         <div class="form-group">
                 <label for="product_name">{{ __('商品の名称') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
                 <input type="text" class="form-control" name="product_name" id="product_name">
+                <label for="company_name">{{ __('メーカー名') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
+                <input type="text" class="form-control" name="company_name" id="company_name">
                 <label for="id">{{ __('ID') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
                 <input type="text" class="form-control" name="id" id="id">
                 <label for="company_id">{{ __('会社ID') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>

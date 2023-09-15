@@ -33,9 +33,11 @@ Route::post('/product_list', [ProductController::class,'productshowList'])->name
 ('productshowList');
 
 
+
 //新規ユーザー登録画面表示
 Route::get('/registration', [UserController::class,'new'])->name
 ('new');
+
 
 
 //商品新規登録表示
@@ -54,6 +56,9 @@ Route::get('/show/{id}', [ProductController::class, 'show'])->name
 //商品検索
 Route::get('/', [ProductController::class,'index'])->name
 ('crud.index');
+
+Route::get('/search', [CompanieController::class,'search'])->name
+('crud.search');
 
 //商品編集
 Route::get('/edit/{id}', [ProductController::class, 'edit'])->name
