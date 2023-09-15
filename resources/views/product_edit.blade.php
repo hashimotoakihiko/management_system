@@ -26,28 +26,61 @@
         <form action="{{ route('products.update', ['id'=>$products->id]) }}" method="POST">
         @csrf
             <fieldset>
-            <div class="form-group">
-                <label for="product_name">{{ __('商品の名称') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
-                <input type="text" class="form-control" name="product_name" id="product_name">
-                <label for="id">{{ __('ID') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
-                <input type="text" class="form-control" name="id" id="id">
-                <label for="company_id">{{ __('会社ID') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
-                <input type="text" class="form-control" name="company_id" id="company_id">
-                <label for="price">{{ __('価格') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
-                <input type="text" class="form-control" name="price" id="price">
-                <label for="stock">{{ __('在庫数') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
-                <input type="text" class="form-control" name="stock" id="stock">
-                <label for="comment">{{ __('コメント') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
-                <input type="text" class="form-control" name="comment" id="comment">
-            </div>
-            <div class="d-flex justify-content-between pt-3">
-                <a href="{{ route('productshowList') }}" class="btn btn-outline-secondary" role="button">
-                    <i class="fa fa-reply mr-1" aria-hidden="true"></i>{{ __('一覧画面へ') }}
-                </a>
-                <button type="submit" class="btn btn-success">
-                    {{ __('更新') }}
-                </button>
-            </div>
+                        <div class="table-responsive">
+                            <table class="table" style="width: 1000px; max-width: 0 auto;">
+                                <tr class="table-info">
+                                <th scope="col" >id</th>
+                                <th scope="col" >商品画像</th>
+                                    <th scope="col" >商品名</th>
+                                    <th scope="col" >価格</th>
+                                    <th scope="col" >在庫数</th>
+                                    <th scope="col" >メーカー名</th>
+                                    <th scope="col" >コメント</th>
+                                    <th scope="col" >詳細表示</th>
+                                    <th scope="col" >削除</th>
+                                </tr>
+                    
+                                <tr>
+                                    <td>{{$products->id}}</td>
+                                    <td><img style="width:80px;" ></td>
+                                    <td>{{$products->product_name}}</td>
+                                    <td>{{$products->price}}</td>
+                                    <td>{{$products->stock}}</td>
+                                    <td>{{$products->company_name}}
+                                    <td>{{$products->comment}}</td>
+                                    <td><a href="{{ route('products.edit', ['id'=>$products->id]) }}" class="btn btn-info">編集</a></td>
+                                </tr>
+                                <div>
+                                <!-- // 下記のようにページネーターを記述するとページネートで次ページに遷移しても、検索結果を保持する -->
+
+                                </div>
+                            </table>
+                        </div>
+                            
+                        <div class="form-group">
+                            <label for="product_name">{{ __('商品の名称') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
+                            <input type="text" class="form-control" name="product_name" id="product_name">
+                            <label for="company_name">{{ __('メーカー名') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
+                            <input type="text" class="form-control" name="company_name" id="company_name">
+                            <label for="id">{{ __('ID') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
+                            <input type="text" class="form-control" name="id" id="id">
+                            <label for="company_id">{{ __('会社ID') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
+                            <input type="text" class="form-control" name="company_id" id="company_id">
+                            <label for="price">{{ __('価格') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
+                            <input type="text" class="form-control" name="price" id="price">
+                            <label for="stock">{{ __('在庫数') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
+                            <input type="text" class="form-control" name="stock" id="stock">
+                            <label for="comment">{{ __('コメント') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
+                            <input type="text" class="form-control" name="comment" id="comment">
+                        </div>
+                        <div class="d-flex justify-content-between pt-3">
+                            <a href="{{ route('productshowList') }}" class="btn btn-outline-secondary" role="button">
+                                <i class="fa fa-reply mr-1" aria-hidden="true"></i>{{ __('一覧画面へ') }}
+                            </a>
+                            <button type="submit" class="btn btn-success">
+                                {{ __('更新') }}
+                            </button>
+                        </div>
             </fieldset>
         </form>
     </div>
@@ -91,7 +124,6 @@
             </label><br>
         </div>
     </div> -->
-
 </div>
     
 <div class="footer">

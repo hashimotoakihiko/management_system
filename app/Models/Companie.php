@@ -21,4 +21,26 @@ class Companie extends Model
         'street_address'
     ];
 
+    public function product()
+    {
+        return $this->hasMany(Product::class);
+    }
+
+    Public function getsearch()
+    {
+        $companies = Companie::select([
+            'id',
+            'company_name',
+            'street_address'
+        ])
+        // ->sortable()
+        ->get();
+        return $companies;
+    } 
+
+// public function getCompany() {
+//     $getCompanyName = Company::pluck('company_name', 'id');
+//     return $getCompanyName;
+//     }
+
 }

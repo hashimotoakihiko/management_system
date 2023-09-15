@@ -5,10 +5,12 @@ body {
     padding: 0 auto;
     margin: 0 auto;
     background-color: white;
+    box-sizing: border-box; 
+
 }
 
 .header{
-    width:420px;
+    /* width:420px; */
     background-color:yellow;
     padding: auto;
     text-align: center;

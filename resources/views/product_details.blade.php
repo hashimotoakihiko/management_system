@@ -17,7 +17,7 @@
 
         
 <div class="content">
-<div class="table-responsive">
+    <div class="table-responsive">
         <table class="table" style="width: 1000px; max-width: 0 auto;">
             <tr class="table-info">
             <th scope="col" >id</th>
