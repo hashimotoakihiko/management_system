@@ -22,7 +22,8 @@ class Product extends Model
          'product_name',
          'price',
          'stock',
-         'comment'
+         'comment',
+         'image_path'  // 画像パスを追加
       ];
 
         /**

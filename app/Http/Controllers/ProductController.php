@@ -170,16 +170,114 @@ class ProductController extends Controller
         return redirect()->to('product_list');
     }
 
+    // public function upload(Request $request)
+    // {
+    //     // ディレクトリ名
+    //     $dir = 'sample';
+
+    //     // sampleディレクトリに画像を保存
+    //     $request->file('image')->store('public/' . $dir);
+
+    //     return redirect('/');
+    // }
+
+    // public function upload(Request $request)
+    // {
+    // // ディレクトリ名を指定
+    // $dir = 'images';
+
+    // // 画像がアップロードされた場合
+    // if ($request->file('image')) {
+    //     // 画像を保存して、そのパスを取得
+    //     $path = $request->file('image')->store('public/' . $dir);
+
+    //     // データベースに保存するため、ファイルパスから「public/」を取り除く
+    //     $filename = str_replace('public/', '', $path);
+
+    //     // 商品のデータを更新（または作成）する
+    //     $product = Product::find($request->id);
+    //     $product->image_path = $filename;
+    //     $product->save();
+
+    //     // リダイレクト
+    //     return redirect()->route('productshowList');
+    // }
+    // // 画像がアップロードされていない場合は、エラーメッセージを返す
+    // return redirect()->back()->withErrors(['image' => '画像がアップロードされていません。']);
+    // }
+
+    // public function upload(Request $request)
+    // {
+    //     // 画像がアップロードされたか確認
+    //     if ($request->hasFile('image')) {
+    //         // 画像をstorageディレクトリに保存し、パスを取得
+    //         $path = $request->file('image')->store('public/images');
+
+    //         // パスから「public/」を削除してファイルパスを取得
+    //         $filename = str_replace('public/', '', $path);
+
+    //         // 商品のデータを取得し、画像パスを更新
+    //         $product = Product::find($request->id);
+    //         $product->image_path = $filename;
+    //         $product->save();
+
+    //         return redirect()->route('productshowList')->with('success', '画像をアップロードしました。');
+    //     }
+
+    //     // エラーメッセージの処理
+    //     return redirect()->back()->withErrors(['image' => '画像がアップロードされていません。']);
+    // }
+
+    
+
+    // public function upload(Request $request)
+    // {
+    // // ディレクトリ名を指定
+    // $dir = 'images';
+
+    // // 画像がアップロードされた場合
+    // if ($request->file('image')) {
+    //     // 画像を保存し、パスを取得
+    //     $path = $request->file('image')->store('public/' . $dir);
+
+    //     // パスから「public/」を削除してファイルパスを取得
+    //     $filename = str_replace('public/', '', $path);
+
+    //     // 商品のデータを取得し、画像パスを更新
+    //     $product = Product::find($request->id);
+    //     $product->image_path = $filename;
+    //     $product->save();
+
+    //     // 成功メッセージと共にリダイレクト
+    //     return redirect()->route('productshowList')->with('success', '画像をアップロードしました。');
+    // }
+
+    // // エラーメッセージ
+    // return redirect()->back()->withErrors(['image' => '画像がアップロードされていません。']);
+    // }
+
     public function upload(Request $request)
     {
-        // ディレクトリ名
-        $dir = 'sample';
+        // 画像がアップロードされたか確認
+        if ($request->hasFile('image')) {
+            // 画像を保存し、パスを取得
+            $path = $request->file('image')->store('public/images');
 
-        // sampleディレクトリに画像を保存
-        $request->file('image')->store('public/' . $dir);
+            // パスから「public/」を削除してファイルパスを取得
+            $filename = str_replace('public/', '', $path);
 
-        return redirect('/');
+            // 該当商品の画像パスを更新
+            $product = Product::find($request->id);
+            $product->image_path = $filename;
+            $product->save();
+
+            return redirect()->route('productshowList')->with('success', '画像をアップロードしました。');
+        }
+
+        // エラーメッセージの処理
+        return redirect()->back()->withErrors(['image' => '画像がアップロードされていません。']);
     }
+
 }
 
     

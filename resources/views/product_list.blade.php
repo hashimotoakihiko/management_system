@@ -54,29 +54,59 @@
                 </tr>
                 
                 <!--レコードの繰り返し処理--> 
+                
+                
                 @foreach($products as $product)
                 <tr>
-                    <td>{{$product->id}}</td>
-                    <td><img style="width:80px;" ></td>
-                    <td><form method="POST" action="/upload" enctype="multipart/form-data">
-                    @csrf
-                    <input type="file" name="image">
-                    <button>アップロード</button>
-                    </form></td>
-                    <td>{{$product->product_name}}</td>
-                    <td>{{$product->price}}</td>
-                    <td>{{$product->stock}}</td>
-                    <td>{{$product->company_name}}</td>
-                    <td>{{$product->comment}}</td>
-                    <td><button><a href="{{ route('products.show', ['id'=>$product->id]) }}" class="btn btn-primary">詳細</a></button></td>
+                    <td>{{ $product->id }}</td>
+
+                    <!-- 画像を表示 -->
                     <td>
-                        <form action="{{ route('products.destroy', ['id'=>$product->id]) }}" method="POST" onclick="return confirm('本当に削除しますか？');">
-                        @csrf
-                            <button type="submit" class="btn btn-danger" onClick="delete_alert(event);return false;">削除</button>
+                        {{ $product->image_path }} <!-- ここでパスを確認 -->
+                        @if($product->image_path)
+                            <img style="width:80px;" src="{{ asset('storage/' . $product->image_path) }}">
+                            <img src="{{ asset('storage/{YNNFOHVlAzEGFF9UJFp5uUVuNqUZnL6VY3ixwCal.png}') }}"/>
+                        @else
+                            <p>画像なし</p>
+                        @endif
+                    </td>
+
+                    <!-- 画像のアップロードフォーム -->
+                    <td>
+                        <!-- <form method="POST" action="{{ route('product.upload') }}" enctype="multipart/form-data">
+                            @csrf
+                            <input type="file" name="image">
+                            <input type="hidden" name="id" value="{{ $product->id }}">
+                            <button type="submit">アップロード</button>
+                        </form> -->
+
+                        <form method="POST" action="{{ route('product.upload') }}" enctype="multipart/form-data">
+                            @csrf
+                            <input type="file" name="image">
+                            <input type="hidden" name="id" value="{{ $product->id }}">
+                            <button type="submit">アップロード</button>
+                        </form>
+
+                    </td>
+
+                    <td>{{ $product->product_name }}</td>
+                    <td>{{ $product->price }}</td>
+                    <td>{{ $product->stock }}</td>
+                    <td>{{ $product->company_name }}</td>
+                    <td>{{ $product->comment }}</td>
+
+                    <!-- 詳細と削除のボタン -->
+                    <td><a href="{{ route('products.show', ['id' => $product->id]) }}" class="btn btn-primary">詳細</a></td>
+                    <td>
+                        <form action="{{ route('products.destroy', ['id' => $product->id]) }}" method="POST" onclick="return confirm('本当に削除しますか？');">
+                            @csrf
+                            <button type="submit" class="btn btn-danger">削除</button>
                         </form>
                     </td>
                 </tr>
                 @endforeach
+
+
                 
                 <div>
                 <!-- // 下記のようにページネーターを記述するとページネートで次ページに遷移しても、検索結果を保持する -->

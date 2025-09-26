@@ -18,7 +18,7 @@ use App\Http\Controllers\ProductController;
 */
 
 //ログイン画面表示
-// Route::get('/', 
+// Route::get('/',
 // 'UserController@showLogin')->name
 // ('users');
 
@@ -31,6 +31,8 @@ Route::get('/product_list', [ProductController::class,'productshowList'])->name
 
 Route::post('/product_list', [ProductController::class,'productshowList'])->name
 ('productshowList');
+
+Route::post('/upload', [ProductController::class, 'upload'])->name('product.upload');
 
 
 

@@ -1,0 +1,10 @@
+/vendor/
+/node_modules/
+/public/storage
+/.idea/
+/*.log
+/.env
+/.phpunit.result.cache
+Homestead.yaml
+Homestead.json
+.env.testing
