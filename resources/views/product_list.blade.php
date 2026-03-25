@@ -105,19 +105,18 @@
                     </td>
                 </tr>
                 @endforeach
-
-
-                
-                <div>
-                <!-- // 下記のようにページネーターを記述するとページネートで次ページに遷移しても、検索結果を保持する -->
-                <!-- //$variablesはご自身の値を使用ください。 -->
-                </div>
             </table>
         </div>
-   
-</div>
 
-<div class="footer">
+        <!-- ページネーション -->
+        @if($products->hasPages())
+            <div class="d-flex justify-content-center mt-4">
+                {{ $products->links() }}
+            </div>
+        @endif
+    </div>
+
+@endsection
     
     <div class="new_registration">
         <!-- <button onclick="location.href='product_new'">商品新規登録</button> -->

@@ -1,53 +1,60 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <link rel='stylesheet' href='./css/registration.css'>
-    <style>
-    </style> 
-    <meta charset="UTF-8">
-    <title>会員登録</title>
-</head>
+@extends('layouts.app')
 
-<body>
+@section('title', 'ユーザー登録')
 
-<div class="header">
-  <h1>vending machine</h1>
-</div>
+@section('content')
+    <h2 class="mb-4">新規ユーザー登録</h2>
 
-
-<div class="content">
-  <h2>新規ユーザー登録</h2>
-
-    <div class="name">
-      <label>ユーザー名:</label>
-        <input type="text" name="name" placeholder="ユーザー名を入力">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    @yield('form-content')
+                </div>
+            </div>
+        </div>
     </div>
+@endsection
 
-    <div class="email">
-      <label>メールアドレス:</label>
-        <input type="text" name="email" placeholder="メールアドレスを入力">
-    </div>
-    
+@section('form-content')
+    <form action="{{ route('register') }}" method="POST">
+        @csrf
 
-  <form onSubmit="return CheckEmail()">
-    <div class="pass1">
-      <label for="pass1">パスワード:</label>
-      <input type="password" id="pass1" name="パスワード" placeholder="パスワードを入力" required>
-    </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">ユーザー名 <span class="text-danger">*</span></label>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" value="{{ old('name') }}" required>
+            @error('name')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
 
-    <div class="pass2">
-      <label for="pass1">パスワード(確認用):</label>
-      <input type="password" id="pass2" name="パスワード(確認用)" placeholder="パスワード(確認用)を入力" required>
-    </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">メールアドレス <span class="text-danger">*</span></label>
+            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" value="{{ old('email') }}" required>
+            @error('email')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
 
-    <p>
-    <input type="submit" id="submit" name="register" value="登録">
-   </p>
-  </form>
+        <div class="mb-3">
+            <label for="password" class="form-label">パスワード <span class="text-danger">*</span></label>
+            <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="pass1" required>
+            @error('password')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
 
-  <script language="JavaScript" type="text/javascript">
+        <div class="mb-3">
+            <label for="password_confirmation" class="form-label">パスワード（確認用） <span class="text-danger">*</span></label>
+            <input type="password" class="form-control" name="password_confirmation" id="pass2" required>
+        </div>
 
-  function CheckEmail() {
+        <div class="d-flex justify-content-between">
+            <a href="{{ route('login') }}" class="btn btn-secondary">ログイン画面へ</a>
+            <button type="submit" class="btn btn-success">登録する</button>
+        </div>
+    </form>
+@endsection
     //IE対応の為変更
     //var mail = email_1.value; //メールフォームの値を取得
     //var mailConfirm = emailConfirm_1.value; //メール確認用フォームの値を取得

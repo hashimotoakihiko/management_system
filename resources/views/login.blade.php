@@ -1,64 +1,42 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<link rel='stylesheet' href='./css/login.css'>
-<title>会員登録</title>
-</head>
+@extends('layouts.app')
 
-<body>
+@section('title', 'ログイン')
 
-<div class="header">
-    <h1>vending machine</h1>
-</div>
-
-
-<div class="content">
-    <h2>ユーザーログイン</h2>
-
-<form method="post" action="product_list">
-@csrf
-    <input type="email" maxlength="25" name="email"  id="email">
-    <input type="password" maxlength="25" name="password" id="password">
-    <p><input type="submit" value="ログイン" id="login"></p>
-</form>
-
-
-
-
-    <!-- <div class="email">
-        <label>メールアドレス: </label>
-            <input type="email" id="email" name="email" placeholder="メールアドレスを入力">
+@section('content')
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="mb-0">ユーザーログイン</h2>
+                </div>
+                <div class="card-body">
+                    @yield('form-content')
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="pass">
-        <label>パスワード:   </label>
-            <input type="password" id="password" name="パスワード" placeholder="パスワードを入力"   minlength="8" required>
-    </div> -->
-<!-- 
-<div class="main-wrap">
-    <div class="input-wrap">
-        <label>ユーザーID<input id="search-id" type="text"></label>
+    <div class="text-center mt-3">
+        <a href="{{ route('new') }}" class="btn btn-link">ユーザー新規登録</a>
     </div>
+@endsection
 
-    <div class="input-wrap">
-        <label>パスワード<input id="search-password" type="text"></label>
-    </div>
+@section('form-content')
+    <form method="post" action="{{ route('productshowList') }}">
+        @csrf
 
-    <div class="button">
-        <button>ログイン</button>
-    </div>
-    <p id="search-result"></p>
-</div> -->
+        <div class="mb-3">
+            <label for="email" class="form-label">メールアドレス</label>
+            <input type="email" class="form-control" id="email" name="email" maxlength="25" required>
+        </div>
 
+        <div class="mb-3">
+            <label for="password" class="form-label">パスワード</label>
+            <input type="password" class="form-control" id="password" name="password" maxlength="25" required>
+        </div>
 
-
-<div class="footer">
-
-    <div class="registration">
-        <button onclick="location.href='registration'">ユーザー新規登録</button>
-    </div>
-</div>
-
-</body>
-</html>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary" id="login">ログイン</button>
+        </div>
+    </form>
+@endsection
