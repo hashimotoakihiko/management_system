@@ -1,10 +1,13 @@
-<?php
 
-use Illuminate\Support\Facades\Route;
+<?php
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\CompanieController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProductController;
 // use App\Http\Controllers\SaleController;
+
+
+// ユーザー登録処理
+Route::post('/registration', [UserController::class, 'store'])->name('users.store');
 
 /*
 |--------------------------------------------------------------------------
@@ -21,26 +24,15 @@ use App\Http\Controllers\ProductController;
 // Route::get('/',
 // 'UserController@showLogin')->name
 // ('users');
-
-Route::get('/login', [UserController::class,'showLogin'])->name
-('showLogin');
+Route::get('/login', [UserController::class,'showLogin'])->name('showLogin');
+Route::post('/login', [UserController::class, 'login'])->name('login');
 
 //商品一覧画面表示
-Route::get('/product_list', [ProductController::class,'productshowList'])->name
-('productshowList');
-
-Route::post('/product_list', [ProductController::class,'productshowList'])->name
-('productshowList');
-
+Route::get('/product_list', [ProductController::class,'productshowList'])->name('productshowList');
 Route::post('/upload', [ProductController::class, 'upload'])->name('product.upload');
 
-
-
 //新規ユーザー登録画面表示
-Route::get('/registration', [UserController::class,'new'])->name
-('new');
-
-
+Route::get('/registration', [UserController::class,'new'])->name('new');
 
 //商品新規登録表示
 Route::get('/create', [ProductController::class, 'create'])->name
@@ -59,7 +51,7 @@ Route::get('/show/{id}', [ProductController::class, 'show'])->name
 Route::get('/', [ProductController::class,'index'])->name
 ('crud.index');
 
-Route::get('/search', [CompanieController::class,'search'])->name
+Route::get('/search', [CompanyController::class,'search'])->name
 ('crud.search');
 
 //商品編集

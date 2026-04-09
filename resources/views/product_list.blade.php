@@ -1,25 +1,17 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <link rel='stylesheet' href='./css/product_list.css'>
-    <meta charset="UTF-8">
-    <title>検索機能</title>
-    <style>
-    </style> 
-</head>
-
-<body>
-
+@extends('layouts.app')
+@section('head')
+<link rel='stylesheet' href='/css/product_list.css'>
+@endsection
+@section('content')
 <div class="header">
-	<h1>vending machine</h1>
+    <h1>vending machine</h1>
 </div>
 <div class="content">
     <h2>商品情報一覧</h2>
 
      <!-- 検索機能ここから -->
 
-     <form action="{{ route('crud.index') }}" method="GET">
-     @csrf
+    <form action="/product_list" method="GET">
         <input type="text" name="keyword" placeholder="キーワード検索">
         <select name="company_id">
             <option value="">会社を選択してください</option>
@@ -95,8 +87,11 @@
                     <td>{{ $product->company_name }}</td>
                     <td>{{ $product->comment }}</td>
 
-                    <!-- 詳細と削除のボタン -->
-                    <td><a href="{{ route('products.show', ['id' => $product->id]) }}" class="btn btn-primary">詳細</a></td>
+                    <!-- 詳細と編集・削除のボタン -->
+                    <td>
+                        <a href="{{ route('products.show', ['id' => $product->id]) }}" class="btn btn-primary">詳細</a>
+                        <a href="{{ route('products.edit', ['id' => $product->id]) }}" class="btn btn-info ml-2">編集</a>
+                    </td>
                     <td>
                         <form action="{{ route('products.destroy', ['id' => $product->id]) }}" method="POST" onclick="return confirm('本当に削除しますか？');">
                             @csrf
@@ -115,18 +110,15 @@
             </div>
         @endif
     </div>
-
-@endsection
-    
     <div class="new_registration">
         <!-- <button onclick="location.href='product_new'">商品新規登録</button> -->
         <button><a href="{{ route('products.create') }}">商品新規登録</a></button>
     </div> 
-
     <div class="return">
         <button onclick="location.href='login'">トップページへ戻る</button>
     </div>
 </div>
+@endsection
 
 
 </body>

@@ -44,7 +44,7 @@ class Product extends Model
          // ->sortable()
          ->from('products')
          ->leftJoin('companies', 'products.company_id', 'companies.id')
-         ->get();
+         ->paginate(10); // 10件ずつページネーション
          return $products;
       } 
 

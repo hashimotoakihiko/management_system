@@ -22,16 +22,28 @@ class ProductController extends Controller
         $this->product = new Product();
     }
 
-    public function productshowList()
-    { 
-        $this->Product = new Product();
-        $this->Companie = new Companie();
 
-        $products = $this->Product->getList();
-        $companies = $this->Companie->getsearch();
-        
-        return view ('product_list',
-        ['products' => $products],['companies' => $companies]);
+    public function productshowList(Request $request)
+    {
+        $products = Product::query();
+        $companies = (new Companie())->getsearch();
+
+        $keyword = $request->input('keyword');
+        if (!empty($keyword)) {
+            $products->where('product_name', 'LIKE', "%{$keyword}%");
+        }
+
+        $company_id = $request->input('company_id');
+        if (!empty($company_id)) {
+            $products->where('company_id', '=', $company_id);
+        }
+
+        $products = $products->paginate(20);
+
+        return view('product_list', [
+            'products' => $products,
+            'companies' => $companies
+        ]);
     }
 
     public function index(Request $request)
@@ -41,7 +53,7 @@ class ProductController extends Controller
         $products = Product::query();
         // $this->Companie = new Companie();
         // $companies = Companie::query();
-        $companies = Companie::getsearch(); // Companieモデルのgetsearch()メソッドを呼び出す
+        $companies = (new Companie())->getsearch(); // インスタンス経由で呼び出し
 
         /* キーワードから検索処理 */
         $keyword = $request->input('keyword');

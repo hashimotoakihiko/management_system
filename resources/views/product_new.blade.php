@@ -19,7 +19,7 @@
 <div class="content">
     <h2>商品新規登録</h2>
     <form action="{{ route('products.store') }}" method="POST">
-    @csrf
+        @csrf
         <fieldset>
         <div class="form-group">
                 <label for="product_name">{{ __('商品の名称') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
@@ -51,13 +51,13 @@
 </div>
 
 
-<div class="footer">
-    <div class="registration">
-        <button onclick="location.href='product_details'">商品登録を行う</button>
-    </div>
+    <div class="footer">
+        <div class="registration">
+            <!-- 商品登録後の遷移先はコントローラ側でリダイレクト推奨 -->
+        </div>
     
-    <div class="return">
-        <button onclick="location.href='product_list'">商品一覧へ戻る</button>
+        <div class="return">
+            <button onclick="location.href='{{ route('productshowList') }}'">商品一覧へ戻る</button>
     </div>
 </div>
     

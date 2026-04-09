@@ -1,3 +1,106 @@
+/* --- 統一感のあるモダンデザイン --- */
+body {
+  font-family: 'Nunito', 'Segoe UI', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  background: #f6f8fa;
+  color: #222;
+}
+
+header {
+  background: linear-gradient(90deg, #4fd1c5 0%, #38b2ac 100%);
+  color: #fff;
+  padding: 1.5rem 0 1rem 0;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+main.container {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+}
+
+footer {
+  color: #888;
+  font-size: 0.95rem;
+}
+
+/* ボタン */
+.btn, button, input[type="submit"] {
+  border-radius: 2rem !important;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-success {
+  background: #38b2ac;
+  border: none;
+}
+.btn-success:hover {
+  background: #319795;
+}
+.btn-secondary {
+  background: #a0aec0;
+  border: none;
+}
+.btn-secondary:hover {
+  background: #718096;
+}
+
+/* フォーム */
+.form-control {
+  border-radius: 1.2rem;
+  border: 1px solid #cbd5e1;
+  padding: 0.7rem 1.1rem;
+  font-size: 1rem;
+}
+.form-label {
+  font-weight: 600;
+  color: #319795;
+}
+.card {
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.card-body {
+  padding: 2rem;
+}
+
+/* テーブル */
+table {
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #fff;
+}
+th {
+  background: #e6fffa;
+  color: #319795;
+  font-weight: 700;
+}
+tr {
+  border-bottom: 1px solid #e2e8f0;
+}
+td, th {
+  padding: 0.7rem 1rem;
+}
+
+/* リンク */
+a {
+  color: #319795;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #285e61;
+  text-decoration: underline;
+}
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 

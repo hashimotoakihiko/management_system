@@ -128,11 +128,11 @@
     
 <div class="footer">
     <div class="product_details">
-        <button onclick="location.href='product_details'">更新</button>
+        <button type="button" onclick="location.href='{{ route('products.show', ['id'=>$products->id]) }}'">更新</button>
     </div>
 
     <div class="return">
-        <button onclick="location.href='product_details'">戻る</button>
+        <button type="button" onclick="location.href='{{ route('products.show', ['id'=>$products->id]) }}'">戻る</button>
     </div>
 </div>
     
