@@ -25,7 +25,9 @@ class ProductController extends Controller
 
     public function productshowList(Request $request)
     {
-        $products = Product::query();
+        $products = Product::query()
+            ->leftJoin('companies', 'products.company_id', '=', 'companies.id')
+            ->select('products.*', 'companies.company_name');
         $companies = (new Companie())->getsearch();
 
         $keyword = $request->input('keyword');
@@ -35,7 +37,7 @@ class ProductController extends Controller
 
         $company_id = $request->input('company_id');
         if (!empty($company_id)) {
-            $products->where('company_id', '=', $company_id);
+            $products->where('products.company_id', '=', $company_id);
         }
 
         $products = $products->paginate(20);
@@ -50,7 +52,9 @@ class ProductController extends Controller
     {
 
          /* テーブルから全てのレコードを取得する */
-        $products = Product::query();
+        $products = Product::query()
+            ->leftJoin('companies', 'products.company_id', '=', 'companies.id')
+            ->select('products.*', 'companies.company_name');
         // $this->Companie = new Companie();
         // $companies = Companie::query();
         $companies = (new Companie())->getsearch(); // インスタンス経由で呼び出し
@@ -91,7 +95,7 @@ class ProductController extends Controller
         // }
 
         if (!empty($company_id)) {
-            $products->where('company_id', '=', $company_id);
+            $products->where('products.company_id', '=', $company_id);
         }
         
         /* ページネーション */

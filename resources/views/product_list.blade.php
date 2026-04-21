@@ -1,125 +1,98 @@
 @extends('layouts.app')
+@section('title', '商品一覧')
 @section('head')
-<link rel='stylesheet' href='/css/product_list.css'>
+<link rel="stylesheet" href="{{ asset('css/product_list.css') }}?v={{ filemtime(public_path('css/product_list.css')) }}">
 @endsection
 @section('content')
-<div class="header">
-    <h1>vending machine</h1>
-</div>
-<div class="content">
-    <h2>商品情報一覧</h2>
+<section class="product-page">
+    <div class="page-head">
+        <h2>商品情報一覧</h2>
+        <a class="primary-link" href="{{ route('products.create') }}">商品新規登録</a>
+    </div>
 
-     <!-- 検索機能ここから -->
-
-    <form action="/product_list" method="GET">
-        <input type="text" name="keyword" placeholder="キーワード検索">
+    <form class="search-form" action="/product_list" method="GET">
+        <input type="text" name="keyword" placeholder="キーワード検索" value="{{ request('keyword') }}">
         <select name="company_id">
             <option value="">会社を選択してください</option>
             @foreach($companies as $company)
-                <option value="{{ $company->id }}">{{ $company->company_name }}</option>
+                <option value="{{ $company->id }}" {{ (string)request('company_id') === (string)$company->id ? 'selected' : '' }}>
+                    {{ $company->company_name }}
+                </option>
             @endforeach
         </select>
-        <button type="submit">検索</button>
+        <button type="submit" class="btn-search">検索</button>
     </form>
 
-    <!--  カテゴリープルダウン -->
-    
-
-        <!-- <input type="submit" value="検索"> -->
-
-        <!-- 新規作成ボタン -->
-        <!-- <button style="margin-top:50px; margin-bottom:20px;" class="btn btn-primary" type=“button” onclick="location.href='/create'">新規作成</button> -->
-    
-        <!--テーブル-->
-        <div class="table-responsive">
-            <table class="table" style="width: 2000px; max-width: 0 auto;">
-                <tr class="table-info">
-                <th scope="col" >id</th>
-                    <th scope="col" >商品画像</th>
-                    <th scope="col" >商品名</th>
-                    <th scope="col" >価格</th>
-                    <th scope="col" >在庫数</th>
-                    <th scope="col" >メーカー名</th>
-                    <th scope="col" >コメント</th>
-                    <th scope="col" >詳細表示</th>
-                    <th scope="col" >削除</th>
+    <div class="table-wrap">
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">商品画像</th>
+                    <th scope="col">画像更新</th>
+                    <th scope="col">商品名</th>
+                    <th scope="col">価格</th>
+                    <th scope="col">在庫数</th>
+                    <th scope="col">メーカー名</th>
+                    <th scope="col">コメント</th>
+                    <th scope="col">操作</th>
+                    <th scope="col">削除</th>
                 </tr>
-                
-                <!--レコードの繰り返し処理--> 
-                
-                
+            </thead>
+            <tbody>
                 @foreach($products as $product)
                 <tr>
                     <td>{{ $product->id }}</td>
 
-                    <!-- 画像を表示 -->
                     <td>
-                        {{ $product->image_path }} <!-- ここでパスを確認 -->
                         @if($product->image_path)
-                            <img style="width:80px;" src="{{ asset('storage/' . $product->image_path) }}">
-                            <img src="{{ asset('storage/{YNNFOHVlAzEGFF9UJFp5uUVuNqUZnL6VY3ixwCal.png}') }}"/>
+                            <img class="product-image" src="{{ asset('storage/' . $product->image_path) }}" alt="{{ $product->product_name }}">
                         @else
-                            <p>画像なし</p>
+                            <span class="text-muted">画像なし</span>
                         @endif
                     </td>
 
-                    <!-- 画像のアップロードフォーム -->
                     <td>
-                        <!-- <form method="POST" action="{{ route('product.upload') }}" enctype="multipart/form-data">
+                        <form class="upload-form" method="POST" action="{{ route('product.upload') }}" enctype="multipart/form-data">
                             @csrf
-                            <input type="file" name="image">
+                            <input type="file" name="image" class="upload-input">
                             <input type="hidden" name="id" value="{{ $product->id }}">
-                            <button type="submit">アップロード</button>
-                        </form> -->
-
-                        <form method="POST" action="{{ route('product.upload') }}" enctype="multipart/form-data">
-                            @csrf
-                            <input type="file" name="image">
-                            <input type="hidden" name="id" value="{{ $product->id }}">
-                            <button type="submit">アップロード</button>
+                            <button type="submit" class="btn-subtle">アップロード</button>
                         </form>
-
                     </td>
 
                     <td>{{ $product->product_name }}</td>
-                    <td>{{ $product->price }}</td>
+                    <td>&yen;{{ number_format($product->price) }}</td>
                     <td>{{ $product->stock }}</td>
                     <td>{{ $product->company_name }}</td>
                     <td>{{ $product->comment }}</td>
 
-                    <!-- 詳細と編集・削除のボタン -->
                     <td>
-                        <a href="{{ route('products.show', ['id' => $product->id]) }}" class="btn btn-primary">詳細</a>
-                        <a href="{{ route('products.edit', ['id' => $product->id]) }}" class="btn btn-info ml-2">編集</a>
+                        <div class="action-links">
+                            <a href="{{ route('products.show', ['id' => $product->id]) }}" class="btn-subtle">詳細</a>
+                            <a href="{{ route('products.edit', ['id' => $product->id]) }}" class="btn-subtle">編集</a>
+                        </div>
                     </td>
                     <td>
-                        <form action="{{ route('products.destroy', ['id' => $product->id]) }}" method="POST" onclick="return confirm('本当に削除しますか？');">
+                        <form action="{{ route('products.destroy', ['id' => $product->id]) }}" method="POST" onsubmit="return confirm('本当に削除しますか？');">
                             @csrf
-                            <button type="submit" class="btn btn-danger">削除</button>
+                            <button type="submit" class="btn-danger">削除</button>
                         </form>
                     </td>
                 </tr>
                 @endforeach
-            </table>
-        </div>
+            </tbody>
+        </table>
+    </div>
 
-        <!-- ページネーション -->
-        @if($products->hasPages())
-            <div class="d-flex justify-content-center mt-4">
-                {{ $products->links() }}
-            </div>
-        @endif
+    @if($products->hasPages())
+    <div class="pagination-wrap">
+        {{ $products->links() }}
     </div>
-    <div class="new_registration">
-        <!-- <button onclick="location.href='product_new'">商品新規登録</button> -->
-        <button><a href="{{ route('products.create') }}">商品新規登録</a></button>
-    </div> 
-    <div class="return">
-        <button onclick="location.href='login'">トップページへ戻る</button>
+    @endif
+
+    <div class="bottom-links">
+        <a class="btn-subtle" href="{{ url('/login') }}">トップページへ戻る</a>
     </div>
-</div>
+</section>
 @endsection
-
-
-</body>
-</html>
