@@ -1,7 +1,7 @@
 
 <?php
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\CompanieController;
 use App\Http\Controllers\ProductController;
 // use App\Http\Controllers\SaleController;
 
@@ -51,7 +51,7 @@ Route::get('/show/{id}', [ProductController::class, 'show'])->name
 Route::get('/', [ProductController::class,'index'])->name
 ('crud.index');
 
-Route::get('/search', [CompanyController::class,'search'])->name
+Route::get('/search', [CompanieController::class,'search'])->name
 ('crud.search');
 
 //商品編集

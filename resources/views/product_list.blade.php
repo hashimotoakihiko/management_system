@@ -10,8 +10,8 @@
         <a class="primary-link" href="{{ route('products.create') }}">商品新規登録</a>
     </div>
 
-    <form class="search-form" action="/product_list" method="GET">
-        <input type="text" name="keyword" placeholder="キーワード検索" value="{{ request('keyword') }}">
+    <form class="search-form" method="GET">
+        <input type="text" name="keyword" placeholder="商品名・メーカー名で検索" value="{{ request('keyword') }}">
         <select name="company_id">
             <option value="">会社を選択してください</option>
             @foreach($companies as $company)

@@ -32,7 +32,10 @@ class ProductController extends Controller
 
         $keyword = $request->input('keyword');
         if (!empty($keyword)) {
-            $products->where('product_name', 'LIKE', "%{$keyword}%");
+            $products->where(function ($query) use ($keyword) {
+                $query->where('products.product_name', 'LIKE', "%{$keyword}%")
+                    ->orWhere('companies.company_name', 'LIKE', "%{$keyword}%");
+            });
         }
 
         $company_id = $request->input('company_id');
@@ -75,7 +78,10 @@ class ProductController extends Controller
         // }
 
         if (!empty($keyword)) {
-            $products->where('product_name', 'LIKE', "%{$keyword}%");
+            $products->where(function ($query) use ($keyword) {
+                $query->where('products.product_name', 'LIKE', "%{$keyword}%")
+                    ->orWhere('companies.company_name', 'LIKE', "%{$keyword}%");
+            });
         }
 
         $company_id = $request->input('company_id');
